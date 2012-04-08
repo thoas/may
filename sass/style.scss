@@ -1,0 +1,87 @@
+@import "compass/css3";
+@import "compass/utilities/sprites";
+@import "blueprint";
+@import "compass/css3/font-face";
+
+@include font-face("ITCLubalinGraphStdBookOblique", font-files("lubalingraphstd-bookoblique-webfont.woff", woff, "lubalingraphstd-bookoblique-webfont.otf", truetype, "lubalingraphstd-bookoblique-webfont.svg", svg), "lubalingraphstd-bookoblique-webfont.eot");
+
+@include font-face("ITCLubalinGraphStdDemi", font-files("lubalingraphstd-demi-webfont.woff", woff, "lubalingraphstd-demi-webfont.otf", truetype, "lubalingraphstd-demi-webfont.svg", svg), "lubalingraphstd-demi-webfont.eot");
+
+@include font-face("ITCLubalinGraphStdBook", font-files("lubalingraphstd-book-webfont.woff", woff, "lubalingraphstd-book-webfont.otf", truetype, "lubalingraphstd-book-webfont.svg", svg), "lubalingraphstd-book-webfont.eot");
+
+@include font-face("ITCLubalinGraphStdDemiOblique", font-files("lubalingraphstd-demioblique-webfont.woff", woff, "lubalingraphstd-demioblique-webfont.otf", truetype, "lubalingraphstd-demioblique-webfont.svg", svg), "lubalingraphstd-demioblique-webfont.eot");
+
+#wrapper {
+    margin: 0 auto;
+    @include container;
+
+    > header {
+        height: 100px;
+        border-top: 5px solid #6034fb;
+    }
+}
+
+#menu-item {
+    color: #565656;
+    padding: 0;
+
+    li {
+        list-style-type: none;
+        float: left;
+        margin-right: 40px;
+
+        .icon {
+            margin: 0 auto;
+            height: 45px;
+        }
+    }
+
+
+    #about-me {
+        .big, .medium {
+            font-family: 'ITCLubalinGraphStdDemiOblique';
+            display: block;
+        }
+
+        .big {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .medium {
+            font-size: 15px;
+        }
+
+    }
+
+    #inspirations, #on-paper {
+        .icon {
+            width: 62px;
+            padding-top: 10px;
+            height: 35px;
+        }
+    }
+
+    #multimedias {
+        .icon {
+            width: 39px;
+        }
+    }
+
+    #photography {
+        .icon {
+            width: 34px;
+        }
+    }
+
+    .label {
+        font-family: 'ITCLubalinGraphStdBookOblique';
+        font-size: 13px;
+        text-align: center;
+        display: block;
+    }
+
+    .icon {
+        display: block;
+    }
+}

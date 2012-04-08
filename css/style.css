@@ -1,0 +1,93 @@
+@font-face {
+  font-family: "ITCLubalinGraphStdBookOblique";
+  src: url('/css/fonts/lubalingraphstd-bookoblique-webfont.eot');
+  src: url('/css/fonts/lubalingraphstd-bookoblique-webfont.eot?#iefix') format('eot'), url('/css/fonts/lubalingraphstd-bookoblique-webfont.woff') format('woff'), url('/css/fonts/lubalingraphstd-bookoblique-webfont.otf') format('truetype'), url('/css/fonts/lubalingraphstd-bookoblique-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: "ITCLubalinGraphStdDemi";
+  src: url('/css/fonts/lubalingraphstd-demi-webfont.eot');
+  src: url('/css/fonts/lubalingraphstd-demi-webfont.eot?#iefix') format('eot'), url('/css/fonts/lubalingraphstd-demi-webfont.woff') format('woff'), url('/css/fonts/lubalingraphstd-demi-webfont.otf') format('truetype'), url('/css/fonts/lubalingraphstd-demi-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: "ITCLubalinGraphStdBook";
+  src: url('/css/fonts/lubalingraphstd-book-webfont.eot');
+  src: url('/css/fonts/lubalingraphstd-book-webfont.eot?#iefix') format('eot'), url('/css/fonts/lubalingraphstd-book-webfont.woff') format('woff'), url('/css/fonts/lubalingraphstd-book-webfont.otf') format('truetype'), url('/css/fonts/lubalingraphstd-book-webfont.svg') format('svg');
+}
+
+@font-face {
+  font-family: "ITCLubalinGraphStdDemiOblique";
+  src: url('/css/fonts/lubalingraphstd-demioblique-webfont.eot');
+  src: url('/css/fonts/lubalingraphstd-demioblique-webfont.eot?#iefix') format('eot'), url('/css/fonts/lubalingraphstd-demioblique-webfont.woff') format('woff'), url('/css/fonts/lubalingraphstd-demioblique-webfont.otf') format('truetype'), url('/css/fonts/lubalingraphstd-demioblique-webfont.svg') format('svg');
+}
+
+/* line 14, ../sass/style.scss */
+#wrapper {
+  margin: 0 auto;
+  width: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 18, ../sass/style.scss */
+#wrapper > header {
+  height: 100px;
+  border-top: 5px solid #6034fb;
+}
+
+/* line 24, ../sass/style.scss */
+#menu-item {
+  color: #565656;
+  padding: 0;
+}
+/* line 28, ../sass/style.scss */
+#menu-item li {
+  list-style-type: none;
+  float: left;
+  margin-right: 40px;
+}
+/* line 33, ../sass/style.scss */
+#menu-item li .icon {
+  margin: 0 auto;
+  height: 45px;
+}
+/* line 41, ../sass/style.scss */
+#menu-item #about-me .big, #menu-item #about-me .medium {
+  font-family: 'ITCLubalinGraphStdDemiOblique';
+  display: block;
+}
+/* line 46, ../sass/style.scss */
+#menu-item #about-me .big {
+  font-size: 18px;
+  text-align: center;
+}
+/* line 51, ../sass/style.scss */
+#menu-item #about-me .medium {
+  font-size: 15px;
+}
+/* line 58, ../sass/style.scss */
+#menu-item #inspirations .icon, #menu-item #on-paper .icon {
+  width: 62px;
+  padding-top: 10px;
+  height: 35px;
+}
+/* line 66, ../sass/style.scss */
+#menu-item #multimedias .icon {
+  width: 39px;
+}
+/* line 72, ../sass/style.scss */
+#menu-item #photography .icon {
+  width: 34px;
+}
+/* line 77, ../sass/style.scss */
+#menu-item .label {
+  font-family: 'ITCLubalinGraphStdBookOblique';
+  font-size: 13px;
+  text-align: center;
+  display: block;
+}
+/* line 84, ../sass/style.scss */
+#menu-item .icon {
+  display: block;
+}

@@ -1,5 +1,8 @@
 @import "compass/css3";
+@import "compass/css3/box-shadow";
+@import "compass/typography/lists/bullets";
 @import "compass/utilities/sprites";
+@import "compass/utilities/general/float";
 @import "blueprint";
 @import "compass/css3/font-face";
 
@@ -14,11 +17,25 @@
 #wrapper {
     margin: 0 auto;
     @include container;
+    height: 900px;
 
     > header {
         height: 100px;
-        border-top: 5px solid #6034fb;
+        @include box-shadow(1px 1px 12px #dcd9d9);
+        margin-bottom: 50px;
     }
+}
+
+#progress-bar {
+    height: 5px;
+    width: 100%;
+    background-color: #6034fb;
+}
+
+#logo {
+    position: absolute;
+    left: 620px;
+    top: 30px;
 }
 
 #menu-item {
@@ -28,28 +45,44 @@
     li {
         list-style-type: none;
         float: left;
-        margin-right: 40px;
+        margin-right: 60px;
+        height: 71px;
 
         .icon {
             margin: 0 auto;
             height: 45px;
+            padding-top: 12px;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &.bordered {
+            border-right: 1px solid #e8e8e8;
+            padding-right: 33px;
+            margin-right: 33px;
         }
     }
 
 
     #about-me {
+        padding-left: 30px;
+
         .big, .medium {
             font-family: 'ITCLubalinGraphStdDemiOblique';
             display: block;
         }
 
         .big {
-            font-size: 18px;
+            font-size: 16px;
             text-align: center;
+            margin-bottom: 5px;
         }
 
         .medium {
-            font-size: 15px;
+            font-size: 14px;
+            margin-bottom: 10px;
         }
 
     }
@@ -57,9 +90,13 @@
     #inspirations, #on-paper {
         .icon {
             width: 62px;
-            padding-top: 10px;
+            padding-top: 22px;
             height: 35px;
         }
+    }
+
+    #inspirations {
+        margin-right: 165px;
     }
 
     #multimedias {
@@ -76,7 +113,7 @@
 
     .label {
         font-family: 'ITCLubalinGraphStdBookOblique';
-        font-size: 13px;
+        font-size: 11px;
         text-align: center;
         display: block;
     }
@@ -85,3 +122,39 @@
         display: block;
     }
 }
+
+#home {
+    height: 350px;
+
+    .message {
+        padding-top: 130px;
+        @include float-left();
+
+        ul {
+            @include no-bullet();
+
+            li {
+                text-align: center;
+                display: none;
+                font-family: 'ITCLubalinGraphStdDemi';
+                font-size: 36px;
+                color: #6034fb;
+                text-transform: uppercase;
+
+                &.current {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    .slideshow {
+        @include float-left();
+    }
+}
+
+.clear {
+    clear: both;
+}
+
+@include blueprint-grid();

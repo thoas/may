@@ -73,6 +73,10 @@
   padding-right: 33px;
   margin-right: 33px;
 }
+#menu-item li a {
+  text-decoration: none;
+  color: #565656;
+}
 #menu-item #about-me {
   padding-left: 30px;
 }

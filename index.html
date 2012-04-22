@@ -24,29 +24,43 @@
             <div id="progress-bar"></div>
             <ul id="menu-item">
                 <li id="about-me" class="bordered">
-                    <span class="big">Hey!</span>
-                    <span class="medium">I'm a graphic &amp; UI designer from Paris.</span>
-                    <span class="label">About Anne Thai</span>
+                    <a href="#about-me" title="about-me">
+                        <span class="big">Hey!</span>
+                        <span class="medium">I'm a graphic &amp; UI designer from Paris.</span>
+                        <span class="label">About Anne Thai</span>
+                    </a>
                 </li>
                 <li id="inspirations">
-                    <span class="icon"></span>
-                    <span class="label">Inspirations</span>
+                    <a href="#inspirations" title="inspirations">
+                        <span class="icon"></span>
+                        <span class="label">Inspirations</span>
+                    </a>
                 </li>
                 <li id="multimedias" class="bordered">
-                    <span class="icon"></span>
-                    <span class="label">Multimedias</span>
+                    <a href="#multimedias" title="multimedias">
+                        <span class="icon"></span>
+                        <span class="label">Multimedias</span>
+                    </a>
                 </li>
                 <li id="on-paper" class="bordered">
-                    <span class="icon"></span>
-                    <span class="label">On paper</span>
+                    <a href="#on-paper" title="on-paper">
+                        <span class="icon"></span>
+                        <span class="label">On paper</span>
+                    </a>
                 </li>
                 <li id="photography">
-                    <span class="icon"></span>
-                    <span class="label">Photography</span>
+                    <a href="#photography" title="photography">
+                        <span class="icon"></span>
+                        <span class="label">Photography</span>
+                    </a>
                 </li>
             </ul>
 
-            <div id="logo">Anne Thai</div>
+            <a href="#home">
+                <div id="logo">
+                    Anne Thai
+                </div>
+            </a>
         </header>
 
         <div role="main">
@@ -72,6 +86,8 @@
     </div>
 
 
+    <script src="js/libs/underscore.min.js"></script>
+    <script src="js/libs/backbone.min.js"></script>
     <script src="js/libs/zepto.min.js"></script>
     <script src="js/libs/raphael.min.js"></script>
     <script src="js/plugins.js"></script>

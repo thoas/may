@@ -61,8 +61,6 @@ $(document).ready(function() {
           }));
         }
 
-        n[c]['r'] = r;
-
         function hover() {
           var _this = $(this);
           var parent = _this.parent();
@@ -97,7 +95,6 @@ $(document).ready(function() {
 
     var logo = m[g]('logo');
     logo.innerHTML = '';
-
 
     var rsr = Raphael(logo, '102.763', '102.763');
 

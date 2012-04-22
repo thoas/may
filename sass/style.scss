@@ -17,7 +17,6 @@
 #wrapper {
     margin: 0 auto;
     @include container;
-    height: 900px;
 
     > header {
         height: 100px;
@@ -154,12 +153,50 @@
     }
 
     .slideshow {
-        @include float-left();
+        width: 480px;
+        height: 325px;
+        background-color: #868686;
+        position: relative;
+
+        .slideshow-container {
+
+            .slideshow-arrow {
+                height: 0;
+                width: 0;
+                border-width: 0 40px 40px;
+                border-color: transparent transparent #fff transparent;
+                border-style: solid;
+
+                &.top-left {
+                    -webkit-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    position: absolute;
+                    top: -6px;
+                    left: -26px;
+                }
+
+                &.bottom-right {
+                    -webkit-transform: rotate(135deg);
+                    -moz-transform: rotate(135deg);
+                    position: absolute;
+                    bottom: -6px;
+                    right: -26px;
+                }
+            }
+        }
     }
 }
 
 .clear {
     clear: both;
+}
+
+.float-left {
+    @include float-left();
+}
+
+.float-right {
+    @include float-right();
 }
 
 @include blueprint-grid();

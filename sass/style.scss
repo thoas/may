@@ -1,4 +1,5 @@
 @import "compass/css3";
+@import "compass/layout/sticky-footer";
 @import "compass/css3/box-shadow";
 @import "compass/typography/lists/bullets";
 @import "compass/utilities/sprites";
@@ -154,33 +155,85 @@
 
     .slideshow {
         width: 480px;
-        height: 325px;
-        background-color: #868686;
-        position: relative;
 
-        .slideshow-container {
+        .slideshow-slides-container {
+            height: 325px;
+            background-color: #868686;
+            position: relative;
 
-            .slideshow-arrow {
-                height: 0;
-                width: 0;
-                border-width: 0 40px 40px;
-                border-color: transparent transparent #fff transparent;
-                border-style: solid;
+            .slideshow-container {
+                overflow: hidden;
 
-                &.top-left {
-                    -webkit-transform: rotate(-45deg);
-                    -moz-transform: rotate(-45deg);
-                    position: absolute;
-                    top: -6px;
-                    left: -26px;
+                .slideshow-arrow {
+                    height: 0;
+                    width: 0;
+                    border-width: 0 40px 40px;
+                    border-color: transparent transparent #fff transparent;
+                    border-style: solid;
+
+                    &.top-left {
+                        -webkit-transform: rotate(-45deg);
+                        -moz-transform: rotate(-45deg);
+                        position: absolute;
+                        top: -6px;
+                        left: -26px;
+                    }
+
+                    &.bottom-right {
+                        -webkit-transform: rotate(135deg);
+                        -moz-transform: rotate(135deg);
+                        position: absolute;
+                        bottom: -6px;
+                        right: -26px;
+                    }
+                }
+            }
+        }
+
+        .slideshow-item-list {
+            @include no-bullet();
+            padding: 0;
+            margin: 0;
+            width: 1920px;
+
+            li {
+                display: table-cell;
+            }
+        }
+
+        .slideshow-position-list {
+            @include no-bullet();
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: inline-block;
+
+                &:not(:last-child) {
+                    margin-right: 5px;
+
+                    a {
+                        span {
+                            &:after {
+                                content: '.';
+                            }
+                        }
+                    }
                 }
 
-                &.bottom-right {
-                    -webkit-transform: rotate(135deg);
-                    -moz-transform: rotate(135deg);
-                    position: absolute;
-                    bottom: -6px;
-                    right: -26px;
+                a {
+                    display: block;
+                    font-family: 'ITCLubalinGraphStdBook';
+                    color: #565656;
+                    text-decoration: none;
+
+                    &.current {
+                        color: #6b42fb;
+                    }
+
+                    &:hover {
+                        color: #565656;
+                    }
                 }
             }
         }
@@ -200,3 +253,5 @@
 }
 
 @include blueprint-grid();
+
+@include sticky-footer(54px, "#wrapper", "#main", "#footer")

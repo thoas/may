@@ -63,7 +63,7 @@
             </a>
         </header>
 
-        <div role="main">
+        <div role="main" id="main">
             <div id="home">
                 <div class="message span-10">
                     <ul>
@@ -77,17 +77,42 @@
 
                 <div class="slideshow span-14">
                     <div class="slideshow-container">
-                        <div class="slideshow-arrow top-left">
-                        </div>
-                        <div class="slideshow-arrow bottom-right">
+                        <div class="slideshow-slides-container">
+                            <div class="slideshow-arrow top-left">
+                            </div>
+                            <div class="slideshow-arrow bottom-right">
+                            </div>
+    
+                            <ul class="slideshow-item-list" id="slider">
+                                <li style="display: block">
+                                    <img src="img/home/slideshow/breakin.jpg" alt="" />
+                                </li>
+                                <li style="display: none;">
+                                    <img src="img/home/slideshow/portfolio.jpg" alt="" />
+                                </li>
+                                <li style="display: none;">
+                                    <img src="img/home/slideshow/ulule.jpg" alt="" />
+                                </li>
+                                <li style="display: none;">
+                                    <img src="img/home/slideshow/dropit.jpg" alt="" />
+                                </li>
+                            </ul>
                         </div>
                     </div>
+
+                    <ul class="slideshow-position-list">
+                        <li><a href="#1"><span>1</span></a></li>
+                        <li><a href="#2"><span>2</span></a></li>
+                        <li><a href="#3"><span>3</span></a></li>
+                        <li><a href="#4"><span>4</span></a></li>
+                    </ul>
                 </div>
+                <div class="clear"></div>
             </div>
+            <div class="clear"></div>
         </div>
 
-        <footer>
-
+        <footer id="footer">
         </footer>
     </div>
 
@@ -99,7 +124,7 @@
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
 
-    <script>
+    <script type="text/javascript">
     var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
     (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
         g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';

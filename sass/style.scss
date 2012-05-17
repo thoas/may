@@ -160,10 +160,10 @@
             height: 325px;
             background-color: #868686;
             position: relative;
+            overflow: hidden;
+            visibility: visible;
 
             .slideshow-container {
-                overflow: hidden;
-
                 .slideshow-arrow {
                     height: 0;
                     width: 0;
@@ -194,7 +194,6 @@
             @include no-bullet();
             padding: 0;
             margin: 0;
-            width: 1920px;
 
             li {
                 display: table-cell;
@@ -208,6 +207,16 @@
 
             li {
                 display: inline-block;
+
+                a {
+                    font-size: 13px;
+
+                    &.active, &:hover {
+                        span {
+                            color: #6b42fb;
+                        }
+                    }
+                }
 
                 &:not(:last-child) {
                     margin-right: 5px;

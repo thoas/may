@@ -97,10 +97,42 @@ $(document).ready(function() {
     logo.innerHTML = '';
 
     var rsr = Raphael(logo, '102.763', '102.763');
-
     rsr.rect(15.875, 16.049, 71.013, 71.014).attr({x: '15.875', y: '16.049', fill: '#FFFFFF', 'stroke-width': '0', 'stroke-opacity': '1'}).transform("m0.7077 0.7065 -0.7065 0.7077 51.4407 -21.2322").data('id', 'rect_a');
     rsr.rect(15.874, 15.671, 71.012, 71.014).attr({x: '15.874', y: '15.671', fill: 'none', stroke: '#000000', "stroke-width": '2', "stroke-miterlimit": '10', 'stroke-opacity': '1'}).transform("m0.7077 0.7065 -0.7065 0.7077 51.1729 -21.3412").data('id', 'rect_b');
     rsr.circle(51, 80, 3).attr({'stroke-width': '0', 'stroke-opacity': '1', 'fill': '#000000'}).data('id', 'circle_c');
 
-    window.mySwipe = new Swipe(document.getElementById('slider'));
+    var Slideshow = {
+      init: function(element, selectors) {
+        this.element = element;
+        this.selectors = selectors;
+
+        this.swiper = new Swipe(this.element, {
+          callback: function(event, index, item) {
+            Slideshow.set_position(index);
+          }
+        });
+
+        var _that = this;
+
+        $.each(this.selectors, function(i, elem) {
+          $(elem).on('click', function(e) {
+            e.preventDefault();
+
+            _that.set_position(i);
+
+            _that.swiper.slide(parseInt(i, 10), 300);
+          });
+        });
+      },
+
+      set_position: function(index) {
+        $.each(this.selectors, function(i, elem) {
+          elem.classList.remove('active');
+        });
+
+        this.selectors[index].classList.add('active');
+      }
+    };
+
+    Slideshow.init(document.getElementById('slider'), $('.slideshow-position-list li a'));
 });

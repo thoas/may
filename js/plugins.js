@@ -95,7 +95,6 @@ Swipe.prototype = {
   },
 
   slide: function(index, duration) {
-
     var style = this.element.style;
 
     // set duration speed (0 represents 1-to-1 scrolling)

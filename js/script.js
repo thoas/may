@@ -41,6 +41,38 @@ $(document).ready(function() {
             'default': '#6034fb',
             'hover': '#ff005a'
           }
+        },
+        'arrow-left': {
+          'path': [
+            'M 0.125,15 25,0 25,30 z'
+          ],
+          'width': 25,
+          'height': 30,
+          'color': {
+            'default': '#767575',
+            'hover': '#6034fb'
+          }
+        },
+        'arrow-right': {
+          'path': [
+            'M 0.125,30 0.125,0 25,15 z'
+          ],
+          'width': 25,
+          'height': 30,
+          'color': {
+            'default': '#767575',
+            'hover': '#6034fb'
+          }
+        },
+        'cloud': {
+          'path': [
+            'M5.837,24.1c0,0-6.277-1.231-5.812-8c0.25-3.64,4.625-5.688,5.812-6s2.562,0,2.562,0 s-0.053-4.178,1.697-6.428s4.765-3.947,8.265-3.634s5.725,1.75,6.975,3.812s1.062,4.375,1.062,4.375s3-0.812,5.188,0.375 s4.943,4.447,5.13,7.26s-1.818,7.49-5.88,8.24S11.774,24.662,5.837,24.1z'
+          ],
+          'width': 49,
+          'height': 32,
+          'color': {
+            'default': '#6034fb',
+          }
         }
       };
 
@@ -63,26 +95,25 @@ $(document).ready(function() {
 
         function hover() {
           var _this = $(this);
-          var parent = _this.parent();
-          var key = parent.attr('title');
-          if (!parent.hasClass('hover')) {
+          var key = _this.attr('data-identifier');
+          if (!_this.hasClass('hover')) {
             n[key]['sets'].forEach(function(el) {
               el.attr({
                 fill: n[key]['color']['hover']
-                });
+              });
             });
 
-            parent.addClass('hover');
+            _this.addClass('hover');
 
             _this.one('mouseout', function() {
-              if (parent.hasClass('hover')) {
+              if (_this.hasClass('hover')) {
                 n[key]['sets'].forEach(function(el) {
                   el.attr({
                     fill: n[key]['color']['default']
                   });
                 });
 
-                parent.removeClass('hover');
+                _this.removeClass('hover');
 
                 _this.one('mouseover', hover);
               }
@@ -90,7 +121,9 @@ $(document).ready(function() {
           }
         }
 
-        $(d).one('mouseover', hover);
+        if ('hover' in n[c]['color']) {
+          $(d).one('mouseover', hover);
+        }
       }
 
     var logo = m[g]('logo');
@@ -116,6 +149,7 @@ $(document).ready(function() {
 
         $.each(this.selectors, function(i, elem) {
           $(elem).on('click', function(e) {
+
             e.preventDefault();
 
             _that.set_position(i);
@@ -134,5 +168,19 @@ $(document).ready(function() {
       }
     };
 
-    Slideshow.init(document.getElementById('slider'), $('.slideshow-position-list li a'));
+    Slideshow.init(document.getElementById('slider-two'), $('#project-detail .slideshow-position-list li a'));
+
+    var scrollable = $('#projects-container ul');
+
+    scrollable.width(scrollable.find('li').length * 140);
+
+    scrollable.flickable({segments: Math.ceil(scrollable.find('li').length / 7)});
+
+    $('#arrow-right span').on('click', function() {
+      scrollable.flickable('scrollNext');
+    });
+
+    $('#arrow-left span').on('click', function() {
+      scrollable.flickable('scrollPrev');
+    });
 });

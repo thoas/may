@@ -1,0 +1,380 @@
+{
+    "projects": [
+        {
+            "title": "Break'in",
+            "description": "Break’in est une pause numérique pour des personnes actives. Ce site sonne comme une sonnerie de récréation car il permet se montrer disponible et joignable grâce à une publication.",
+            "type": "Site communautaire",
+            "client": "Projet de fin d'étude à l'IUT MLV, réalisé en équipe",
+            "images": [
+                "multimedias/breakin/breakin-01.jpg",
+                "multimedias/breakin/breakin-02.jpg",
+                "multimedias/breakin/breakin-03.jpg",
+                "multimedias/breakin/breakin-04.jpg",
+                "multimedias/breakin/breakin-05.jpg",
+                "multimedias/breakin/breakin-06.jpg",
+                "multimedias/breakin/breakin-07.jpg",
+                "multimedias/breakin/breakin-08.jpg"
+            ],
+            "thumbnail": "multimedias/breakin/thumbnail.jpg",
+            "category": "multimedias"
+        },
+        {
+            "title": "Folio",
+            "description": "Afin de titiller la curiosité des jeunes auprès des livres classiques, Folio lance des cartes’com permettant de télécharger le livre numérique sur un support mobile interactif. Le livre est une nourriture intellectuelle, c’est pourquoi l’auteur est le cuisinier et le contexte du roman en est la recette.",
+            "type": "Edition numérique",
+            "client": "Projet de fin d'étude de BTS à Estienne",
+            "images": [
+                "multimedias/folio/folio-1.jpg",
+                "multimedias/folio/folio-2.jpg",
+                "multimedias/folio/folio-3.jpg",
+                "multimedias/folio/folio-4.jpg",
+                "multimedias/folio/folio-5.jpg"
+            ],
+            "thumbnail": "multimedias/folio/thumbnail.jpg",
+            "category": "multimedias"
+        },
+        {
+            "title": "Drop'it",
+            "description": "Drop’it est une application conceptuelle permettant de mesurer la température colorimétrique d’un lieu.  Chaque couleur symbolise un sentiment humain.",
+            "type": "Concept d'application d'iPhone",
+            "client": "Projet de fin d'étude à l'IUT MLV, réalisé en équipe",
+            "images": [
+                "multimedias/dropit/dropit-1.jpg"
+            ],
+            "thumbnail": "multimedias/dropit/thumbnail.jpg",
+            "category": "multimedias"
+        },
+        {
+            "title": "Ulule",
+            "description": "Ulule est une plateforme communautaire qui permet à la fois de découvir et de financer, via des dons, des projets d’entreprise, d’association ou de particulier en échange de contreparties.",
+            "type": "Application iPhone en cours de réalisation",
+            "client": "Projet personnel",
+            "images": [
+                "multimedias/ulule/ulule-1.jpg"
+            ],
+            "thumbnail": "multimedias/ulule/thumbnail.jpg",
+            "category": "multimedias"
+        },
+        {
+            "title": "Labomatic",
+            "description": "Critique des horoscopes grâce à des textes qui prédisent l’avenir. Ceux-ci ne sont en réalité que des mots relavés, reformulés... Environ 150 couleurs et textes sont générés aléatoirement.",
+            "type": "Site expérimental sur Flash",
+            "client": "Projet personnel",
+            "images": [
+                "multimedias/labomatic/labomatic-1"
+            ],
+            "thumbnail": "multimedias/labomatic/thumbnail.jpg",
+            "category": "multimedias"
+        },
+        {
+            "title": "Paranoia",
+            "description": "La méfiance de l’inconnu, l’indifférence forcée et la peur du danger sont inculquées dans ces lieux publics. Cette création dévoile une double vision de la réalité qui refléte une liberté surveillée par la multiplication des caméras et l’automatisation des machines.",
+            "type": "Audiovisuelle",
+            "client": "Projet pour le Festival EXIT 2011 à l'EPSAA",
+            "images": [],
+            "video": "http://vimeo.com/21770849",
+            "thumbnail": "multimedias/paranoia/thumbnail.jpg",
+            "category": "multimedias"
+        },
+        {
+            "title": "Narcisse",
+            "type": "Edition",
+            "client": "Projet de BTS à Estienne",
+            "description": "Narcisse est un magazine psychologique : je m’aime comme je suis. C’est un magazine qui ne se lisse pas et qui s’assume. Le parti pris est l’exteriorisation des émotions afin de mieux s’accepter et comprendre sans changer.",
+            "images": [
+                "on-paper/narcisse/narcisse-1.jpg",
+                "on-paper/narcisse/narcisse-2.jpg",
+                "on-paper/narcisse/narcisse-3.jpg"
+            ],
+            "thumbnail": "on-paper/narcisse/thumbnail.jpg",
+            "category": "on-paper"
+        },
+        {
+            "title": "Robert",
+            "type": "Edition",
+            "client": "Projet de BTS à Estienne",
+            "description": "Le dictionnaire Robert lance des livrets de chevet autour de l’histoire de la langue française. On retrouve les inusités, les mots féminisés, les mots djeunes, les mots refusés, les mots royals : rois et reines... Réflexion autour des niveaux de compréhension d’un mot.",
+            "images": [
+                "on-paper/robert/robert-1.jpg",
+                "on-paper/robert/robert-2.jpg"
+            ],
+            "thumbnail": "on-paper/robert/thumbnail.jpg",
+            "category": "on-paper"
+        },
+        {
+            "title": "Vin didactique",
+            "type": "Packaging",
+            "client": "Projet de BTS à Estienne",
+            "description": "Visant une cible de jeune amateurs de Vin, ce packaging pour le vin Chateau Haut Rian se concentre sur la pédagogie. Le vin est social et ces étiquettes parlent et vous apprennent le vocabulaire, les citations, l’histoire, les chiffres clé à travers un questionnaire.",
+            "images": [
+                "on-paper/vin/vin-1.jpg",
+                "on-paper/vin/vin-2.jpg",
+                "on-paper/vin/vin-3.jpg",
+                "on-paper/vin/vin-4.jpg"
+            ],
+            "thumbnail": "on-paper/vin/thumbnail.jpg",
+            "category": "on-paper"
+        },
+        {
+            "title": "Création typographique",
+            "type": "Typographie",
+            "client": "Workshop durant le Festival d'Affiche et de Graphisme à Chaumont 2011",
+            "description": "Réalisée uniquement avec une photocopieuse, du papier noir et blanc, colle et ciseaux. Ces typos ont été conçues à partir des modules choisis puis rassemblés. Cette méthode de travail permet de mieux comprendre les problématiques de création typographique mais aussi importance des détails d’une lettre. Le résultat est un cadavre esquis de mots de chaque élève.",
+            "images": [
+                "on-paper/typo/typo-1.jpg",
+                "on-paper/typo/typo-2.jpg",
+                "on-paper/typo/typo-3.jpg",
+                "on-paper/typo/typo-4.jpg"
+            ],
+            "thumbnail": "on-paper/typo/thumbnail.jpg",
+            "category": "on-paper"
+        },
+        {
+            "title": "Mémoire",
+            "type": "Expression visuelle",
+            "client": "Projet en BTS à Estienne",
+            "description": "Projet autour de la chiromancie (lecture les lignes de la  main) qui permet d’observer les marques de la vie pour extraire une signification comme un voyage dans le temps (passé ou futur). Ici, cette notion est exploitée en tirant des clichés. Ceux-ci sont composés d’un recto qui correspond à une carte postale touristique et d’un verso qui représente une lettre, comme si le texte raconté était lu dans les rides de la main.",
+            "images": [
+                "on-paper/memoire/memoire-1.jpg"
+            ],
+            "thumbnail": "on-paper/memoire/thumbnail.jpg",
+            "category": "on-paper"
+        },
+        {
+            "title": "La maison du Hip Hop à Paris",
+            "type": "Identité visuelle",
+            "client": "Projet en BTS à Estienne",
+            "description": "Concours d’identité visuelle pour la maison du HipHop à Barbès. Concept orienté vers la notion de la trace, que ça soit physique (mur, sol) ou mental (société, publique ...).",
+            "images": [
+                "on-paper/hiphop/hip-hop-1.jpg",
+                "on-paper/hiphop/hip-hop-2.jpg"
+            ],
+            "thumbnail": "on-paper/hiphop/thumbnail.jpg",
+            "category": "on-paper"
+        },
+        {
+            "title": "Plaisir",
+            "type": "Croquis personnels",
+            "description": "Dans un train, au déjeuner, à la maison ou dans des lieux ...  Partout où je peux, il m’est important d’évoquer des ambiances par des compositions graphiques.Entre feutre Muji, aquarelle, crayons de couleur et pinceau d’encre de chine, on retrouve une gestuelle qui se fige sur ces carnets de poche.",
+            "images": [
+                "on-paper/croquis/croquis-1.jpg",
+                "on-paper/croquis/croquis-2.jpg",
+                "on-paper/croquis/croquis-3.jpg",
+                "on-paper/croquis/croquis-4.jpg",
+                "on-paper/croquis/croquis-5.jpg",
+                "on-paper/croquis/croquis-6.jpg",
+                "on-paper/croquis/croquis-7.jpg",
+                "on-paper/croquis/croquis-8.jpg",
+                "on-paper/croquis/croquis-9.jpg",
+                "on-paper/croquis/croquis-10.jpg"
+            ],
+            "thumbnail": "on-paper/croquis/thumbnail.jpg",
+            "category": "on-paper"
+        },
+        {
+            "title": "Erreur d'attention",
+            "type": "Projet personnel",
+            "description": "Mettre une attention particulière sur des richesses visuelles trop jugées insignifiantes. Papilloner dans une ville inconnue ces clichés se portent principalement sur les matières, les couleurs et l’architecture du paysage, ce qui apporte une vision atypique des instants vécus.",
+            "images": [
+                "photography/erreur/erreur-1.jpg",
+                "photography/erreur/erreur-2.jpg",
+                "photography/erreur/erreur-3.jpg",
+                "photography/erreur/erreur-4.jpg",
+                "photography/erreur/erreur-5.jpg",
+                "photography/erreur/erreur-6.jpg",
+                "photography/erreur/erreur-7.jpg",
+                "photography/erreur/erreur-8.jpg",
+                "photography/erreur/erreur-9.jpg",
+                "photography/erreur/erreur-10.jpg",
+                "photography/erreur/erreur-11.jpg",
+                "photography/erreur/erreur-12.jpg"
+            ],
+            "thumbnail": "photography/erreur/thumbnail.jpg",
+            "category": "photography"
+        },
+        {
+            "title": "Latence",
+            "type": "Projet personnel",
+            "description": "Travail autour des laps du temps qui s’écoule entre l’ambiance colorée générale et l’interet porté  pour chaque cliché.On peut aussi parlé du temps qui s’écroule entre le pellicule argentique et les clichés couleurs développés... L’attente dans l’utilisation les films argentiques accentue la surprise lorsdu résultat.",
+            "images": [
+                "photography/latence/photo-1.jpg",
+                "photography/latence/photo-2.jpg",
+                "photography/latence/photo-3.jpg",
+                "photography/latence/photo-4.jpg",
+                "photography/latence/photo-5.jpg",
+                "photography/latence/photo-6.jpg",
+                "photography/latence/photo-7.jpg",
+                "photography/latence/photo-8.jpg",
+                "photography/latence/photo-9.jpg",
+                "photography/latence/photo-10.jpg",
+                "photography/latence/photo-11.jpg",
+                "photography/latence/photo-12.jpg"
+            ],
+            "thumbnail": "photography/latence/thumbnail.jpg",
+            "category": "photography"
+        },
+        {
+            "title": "Rêve d'enfant",
+            "type": "Projet personnel",
+            "images": [
+                "photography/revedenfant/photo-bdx-1.jpg",
+                "photography/revedenfant/photo-bdx-2.jpg",
+                "photography/revedenfant/photo-bdx-3.jpg"
+            ],
+            "thumbnail": "photography/revedenfant/thumbnail.jpg",
+            "category": "photography"
+        }
+    ],
+    "links": [
+        {
+            "title": "Dribble",
+            "url": "http://dribbble.com/"
+            "category": "UX / UI"
+        },
+        {
+            "title": "Mobile Patterns",
+            "url": "http://mobile-patterns.com/activityfeeds"
+            "category": "UX / UI"
+        },
+        {
+            "title": "Ergolab",
+            "url": "http://www.ergolab.net/"
+            "category": "UX / UI"
+        },
+        {
+            "title": "Fast co Design",
+            "url": "http://www.fastcodesign.com/"
+            "category": "UX / UI"
+        },
+        {
+            "title": "Thinking",
+            "url": "http://design.activeside.net/thinking"
+            "category": "UX / UI"
+        },
+        {
+            "title": "Android Patterns",
+            "url": "http://www.androidpatterns.com/"
+            "category": "UX / UI"
+        },
+        {
+            "title": "Faute de gout",
+            "url": "http://mauvaisgout.net/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Culture d'art numérique",
+            "url": "http://www.mediaartdesign.net/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Inspire moi",
+            "url": "http://inspire.2ia.pl/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Packaging",
+            "url": "http://lovelypackage.com/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Editions Volumiques",
+            "url": "http://www.volumique.com/fr/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Arts numérique",
+            "url": "http://arts-numeriques.net/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Toilet ?",
+            "url": "http://www.papertoilet.com/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Plage Été Nanas",
+            "url": "http://www.yesforsure.com/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Inspirations graphisme",
+            "url": "http://designspiration.net/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Son & Émotions",
+            "url": "http://www.stereomood.com/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Artiste numérique",
+            "url": "http://www.recyclism.com/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Smile everyday",
+            "url": "http://yayeveryday.com/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Crazy",
+            "url": "http://www.nekromisantrop.com/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "10$ font",
+            "url": "http://www.tendollarfonts.com/"
+            "category": "TYPOGRAPHY"
+        },
+        {
+            "title": "BAT font",
+            "url": "http://www.batfoundry.com/"
+            "category": "TYPOGRAPHY"
+        },
+        {
+            "title": "Google font",
+            "url": "http://www.google.com/webfonts"
+            "category": "TYPOGRAPHY"
+        },
+        {
+            "title": "Veer font",
+            "url": "http://www.veer.com/products/fonts/"
+            "category": "TYPOGRAPHY"
+        },
+        {
+            "title": "Moebuz concept",
+            "url": "http://meobius.fr/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Geoffrey Dorme",
+            "url": "http://graphism.fr/"
+            "category": "GRAPHIC DESIGN"
+        },
+        {
+            "title": "Camille André",
+            "url": "http://cephalon-art.blogspot.fr/"
+            "category": "BLOGS"
+        },
+        {
+            "title": "Clément De Ruyter",
+            "url": "http://rat-and-cat.blogspot.fr/"
+            "category": "BLOGS"
+        },
+        {
+            "title": "Romy Ryan James",
+            "url": "http://www.flickr.com/photos/romyryanjames/"
+            "category": "BLOGS"
+        },
+        {
+            "title": "Adrien Boissonnot",
+            "url": "http://www.dwarfa.fr/"
+            "category": "BLOGS"
+        },
+        {
+            "title": "Augustin Clermont",
+            "url": "http://augustino.canalblog.com/"
+            "category": "BLOGS"
+        }
+    ]
+}

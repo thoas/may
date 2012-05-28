@@ -1,25 +1,25 @@
 @font-face {
   font-family: "ITCLubalinGraphStdBookOblique";
   src: url('/css/fonts/lubalingraphstd-bookoblique-webfont.eot');
-  src: url('/css/fonts/lubalingraphstd-bookoblique-webfont.eot?#iefix') format('eot'), url('/css/fonts/lubalingraphstd-bookoblique-webfont.woff') format('woff'), url('/css/fonts/lubalingraphstd-bookoblique-webfont.otf') format('truetype'), url('/css/fonts/lubalingraphstd-bookoblique-webfont.svg') format('svg');
+  src: url('/css/fonts/lubalingraphstd-bookoblique-webfont.eot?iefix') format('eot'), url('/css/fonts/lubalingraphstd-bookoblique-webfont.woff') format('woff'), url('/css/fonts/lubalingraphstd-bookoblique-webfont.otf') format('truetype'), url('/css/fonts/lubalingraphstd-bookoblique-webfont.svg') format('svg');
 }
 
 @font-face {
   font-family: "ITCLubalinGraphStdDemi";
   src: url('/css/fonts/lubalingraphstd-demi-webfont.eot');
-  src: url('/css/fonts/lubalingraphstd-demi-webfont.eot?#iefix') format('eot'), url('/css/fonts/lubalingraphstd-demi-webfont.woff') format('woff'), url('/css/fonts/lubalingraphstd-demi-webfont.otf') format('truetype'), url('/css/fonts/lubalingraphstd-demi-webfont.svg') format('svg');
+  src: url('/css/fonts/lubalingraphstd-demi-webfont.eot?iefix') format('eot'), url('/css/fonts/lubalingraphstd-demi-webfont.woff') format('woff'), url('/css/fonts/lubalingraphstd-demi-webfont.otf') format('truetype'), url('/css/fonts/lubalingraphstd-demi-webfont.svg') format('svg');
 }
 
 @font-face {
   font-family: "ITCLubalinGraphStdBook";
   src: url('/css/fonts/lubalingraphstd-book-webfont.eot');
-  src: url('/css/fonts/lubalingraphstd-book-webfont.eot?#iefix') format('eot'), url('/css/fonts/lubalingraphstd-book-webfont.woff') format('woff'), url('/css/fonts/lubalingraphstd-book-webfont.otf') format('truetype'), url('/css/fonts/lubalingraphstd-book-webfont.svg') format('svg');
+  src: url('/css/fonts/lubalingraphstd-book-webfont.eot?iefix') format('eot'), url('/css/fonts/lubalingraphstd-book-webfont.woff') format('woff'), url('/css/fonts/lubalingraphstd-book-webfont.otf') format('truetype'), url('/css/fonts/lubalingraphstd-book-webfont.svg') format('svg');
 }
 
 @font-face {
   font-family: "ITCLubalinGraphStdDemiOblique";
   src: url('/css/fonts/lubalingraphstd-demioblique-webfont.eot');
-  src: url('/css/fonts/lubalingraphstd-demioblique-webfont.eot?#iefix') format('eot'), url('/css/fonts/lubalingraphstd-demioblique-webfont.woff') format('woff'), url('/css/fonts/lubalingraphstd-demioblique-webfont.otf') format('truetype'), url('/css/fonts/lubalingraphstd-demioblique-webfont.svg') format('svg');
+  src: url('/css/fonts/lubalingraphstd-demioblique-webfont.eot?iefix') format('eot'), url('/css/fonts/lubalingraphstd-demioblique-webfont.woff') format('woff'), url('/css/fonts/lubalingraphstd-demioblique-webfont.otf') format('truetype'), url('/css/fonts/lubalingraphstd-demioblique-webfont.svg') format('svg');
 }
 
 #wrapper {
@@ -31,8 +31,9 @@
 }
 #wrapper > header {
   height: 100px;
-  -webkit-box-shadow: 1px 1px 12px #dcd9d9;
   -moz-box-shadow: 1px 1px 12px #dcd9d9;
+  -webkit-box-shadow: 1px 1px 12px #dcd9d9;
+  -o-box-shadow: 1px 1px 12px #dcd9d9;
   box-shadow: 1px 1px 12px #dcd9d9;
   margin-bottom: 70px;
 }
@@ -239,8 +240,8 @@
   border-style: solid;
 }
 #projects #projects-container ul li div.project .arrow-container.top-left {
-  -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   position: absolute;
@@ -248,8 +249,8 @@
   left: -28px;
 }
 #projects #projects-container ul li div.project .arrow-container.top-right {
-  -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   position: absolute;
@@ -257,8 +258,8 @@
   right: -28px;
 }
 #projects #projects-container ul li div.project .arrow-container.bottom-right {
-  -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
   -o-transform: rotate(135deg);
   transform: rotate(135deg);
   position: absolute;
@@ -266,8 +267,8 @@
   right: -28px;
 }
 #projects #projects-container ul li div.project .arrow-container.bottom-left {
-  -webkit-transform: rotate(-135deg);
   -moz-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
   -o-transform: rotate(-135deg);
   transform: rotate(-135deg);
   position: absolute;
@@ -331,8 +332,8 @@
 }
 
 .scrollable {
-  -webkit-transform: scale(translate3d(0, 0, 0)) rotate(true) translate(0, 0) skew(0deg, 0deg);
   -moz-transform: scale(translate3d(0, 0, 0)) rotate(true) translate(0, 0) skew(0deg, 0deg);
+  -webkit-transform: scale(translate3d(0, 0, 0)) rotate(true) translate(0, 0) skew(0deg, 0deg);
   -o-transform: scale(translate3d(0, 0, 0)) rotate(true) translate(0, 0) skew(0deg, 0deg);
   transform: scale(translate3d(0, 0, 0)) rotate(true) translate(0, 0) skew(0deg, 0deg);
 }
@@ -934,8 +935,8 @@ input.span-24, textarea.span-24, select.span-24 {
   border-style: solid;
 }
 .slideshow .slideshow-container .slideshow-arrow.top-left {
-  -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
   position: absolute;
@@ -943,8 +944,8 @@ input.span-24, textarea.span-24, select.span-24 {
   left: -27px;
 }
 .slideshow .slideshow-container .slideshow-arrow.bottom-right {
-  -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
   -o-transform: rotate(135deg);
   transform: rotate(135deg);
   position: absolute;

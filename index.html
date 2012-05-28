@@ -68,38 +68,53 @@
         <div role="main" id="main">
         </div>
 
+        <div class="clear"></div>
+
         <footer id="footer">
         </footer>
     </div>
 
-    <script type="text/template" id="inspirations-template">
-        <div id="inspirations">
-            <div id="inspirations-container">
-                <% var i = 0; _.each(inspirations, function(links, category) { %> 
+    <script type="text/template" id="project-detail-template">
+        <div id="project-detail">
+            <%= content %>
+            <div class="clear"></div>
+        </div>
+    </script>
 
-                <div class="inspiration <% if (i == length - 1) { %>span-5<% } else { %>span-6<% } %>">
-                    <h3><%= category %></h3>
-                    <ul>
-                        <% _.each(links, function(link, i) { %> 
-                            <li><a href="<%= link.url %>"><%= link.title %></a></li>
-                        <% }); %>
-                    </ul>
-                </div>
+    <script type="text/template" id="inspirations-container-template">
+        <div id="inspirations-container">
+            <% var i = 0; _.each(inspirations, function(links, category) { %> 
 
-                <% i++; }); %>
-
-                <div class="clear"></div>
-            </div>
-
-            <div id="images-container">
+            <div class="inspiration <% if (i == length - 1) { %>span-5<% } else { %>span-6<% } %>">
+                <h3><%= category %></h3>
                 <ul>
-                    <% _.each(images, function(image, i) { %> 
-                    <li>
-                        <img src="<%= image %>" />
-                    </li>
+                    <% _.each(links, function(link, i) { %> 
+                        <li><a href="<%= link.get('url') %>"><%= link.get('title') %></a></li>
                     <% }); %>
                 </ul>
             </div>
+
+            <% i++; }); %>
+
+            <div class="clear"></div>
+        </div>
+    </script>
+
+    <script type="text/template" id="images-container-template">
+        <div id="images-container">
+            <ul>
+                <% _.each(images, function(image, i) { %> 
+                <li>
+                    <img src="<%= image %>" />
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+    </script>
+
+    <script type="text/template" id="inspirations-template">
+        <div id="inspirations">
+            <%= content %>
         </div>
     </script>
 
@@ -156,16 +171,16 @@
                     <span class="icon" data-identifier="arrow-left"></span>
                 </div>
                 <ul>
-                    <% _.each(projects, function(project) { %> 
+                    <% projects.each(function(project) { %> 
                     <li>
                         <div class="project">
-                            <a href="#category/<%= project.category %>/<%= project.slug %>">
+                            <a href="#category/<%= project.get('category') %>/<%= project.get('slug') %>">
                                 <div class="arrow-container top-left"></div>
                                 <div class="arrow-container top-right"></div>
                                 <div class="arrow-container bottom-right"></div>
                                 <div class="arrow-container bottom-left"></div>
 
-                                <img src="<%= project.thumbnail %>" />
+                                <img src="<%= project.get('thumbnail') %>" />
                             </a>
                         </div>
                     </li>
@@ -179,30 +194,39 @@
 
     <script type="text/template" id="project-focus-template">
         <div class="span-9 project-focus">
-            <h2><%= project.title %></h2>
+            <h2><%= project.get('title') %></h2>
             <div class="project-focus-container">
                 <div class="project-focus-header">
                     <table>
-                        <% if (project.type !== undefined) { %>
+                        <% if (project.get('type') !== undefined) { %>
                         <tr>
                             <td class="label">Type :</td>
-                            <td><%= project.type %></td>
+                            <td><%= project.get('type') %></td>
                         </tr>
                         <% } %>
                         <% if (project.client !== undefined) { %>
                         <tr>
                             <td class="label">Client :</td>
-                            <td><%= project.client %></td>
+                            <td><%= project.get('client') %></td>
                         </tr>
                         <% } %>
                     </table>
                 </div>
 
-                <p class="description"><%= project.description %></p>
+                <p class="description"><%= project.get('description') %></p>
             </div>
         </div>
     </script>
 
+    <script type="text/template" id="homepage-template">
+        <div class="message span-10">
+            <ul>
+                <% _.each(messages, function(message, i) { %>
+                    <li <% if (i == current) { %>class="current"<% } %>><%= message %></li>
+                <% }) %>
+            </ul>
+        </div>
+    </script>
 
     <script src="js/libs/zepto.min.js"></script>
     <script src="js/libs/underscore.min.js"></script>

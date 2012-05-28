@@ -1,9 +1,32 @@
 {
-    "homepages": [
-        "img/home/slideshow/breakin.jpg",
-        "img/home/slideshow/portfolio.jpg",
-        "img/home/slideshow/ulule.jpg",
-        "img/home/slideshow/dropit.jpg"
+    "homepage": {
+        "messages": [
+          "Do you want to pee?",
+          "Beer pizza tonight?",
+          "Are you fine?",
+          "It's cool isn't it?",
+          "Tea or coffee?"
+        ],
+        "images": [
+          "img/home/slideshow/breakin.jpg",
+          "img/home/slideshow/portfolio.jpg",
+          "img/home/slideshow/ulule.jpg",
+          "img/home/slideshow/dropit.jpg"
+        ]
+    },
+    "categories": [
+      {
+        "title": "Multimedias",
+        "slug": "multimedias"
+      },
+      {
+        "title": "Photography",
+        "slug": "photography"
+      },
+      {
+        "title": "On paper",
+        "slug": "on-paper"
+      }
     ],
     "projects": [
         {
@@ -493,7 +516,6 @@
         "img/inspiration/181.png",
         "img/inspiration/182.jpeg",
         "img/inspiration/183.jpg",
-        "img/inspiration/184.py",
         "img/inspiration/19.jpg",
         "img/inspiration/2.jpg",
         "img/inspiration/24.png",
@@ -517,7 +539,6 @@
         "img/inspiration/5.png",
         "img/inspiration/50.png",
         "img/inspiration/51.png",
-        "img/inspiration/53.py",
         "img/inspiration/54.jpg",
         "img/inspiration/55.jpeg",
         "img/inspiration/58.png",

@@ -142,7 +142,7 @@ $(document).ready(function() {
 
         this.swiper = new Swipe(this.element, {
           callback: function(event, index, item) {
-            Slideshow.set_position(index);
+            Slideshow.setPosition(index);
           }
         });
 
@@ -153,14 +153,14 @@ $(document).ready(function() {
 
             e.preventDefault();
 
-            _that.set_position(i);
+            _that.setPosition(i);
 
             _that.swiper.slide(parseInt(i, 10), 300);
           });
         });
       },
 
-      set_position: function(index) {
+      setPosition: function(index) {
         $.each(this.selectors, function(i, elem) {
           elem.classList.remove('active');
         });
@@ -171,7 +171,7 @@ $(document).ready(function() {
 
 
     var data;
-    function get_data(callback) {
+    function getData(callback) {
       if (data === undefined) {
         $.getJSON('/data.json', function(result) {
           data = result;
@@ -182,10 +182,172 @@ $(document).ready(function() {
       }
     }
 
+    var models = {},
+        collections = {},
+        views = {};
+
+    models.Project = Backbone.Model.extend({
+      initialize: function(){
+      }
+    });
+
+    models.Category = Backbone.Model.extend({
+      initialize: function(){
+      }
+    });
+
+    models.Link = Backbone.Model.extend({
+      initialize: function(){
+      }
+    });
+
+    models.Inspiration = Backbone.Model.extend({
+      initialize: function(){
+      }
+    });
+
+    collections.Projects = Backbone.Collection.extend({
+      model: models.Project
+    });
+
+    collections.Categories = Backbone.Collection.extend({
+      model: models.Category
+    });
+
+    collections.Links = Backbone.Collection.extend({
+      model: models.Link
+    });
+
+    collections.Inspirations = Backbone.Collection.extend({
+      model: models.Inspiration
+    });
+
+    views.ProjectDetail = Backbone.View.extend({
+      el: $("#main"),
+      initialize: function(project){
+          this.project = project;
+      },
+      render: function(){
+
+        var slideshow = new views.Slideshow(this.project.get('images')),
+            focus = new views.ProjectFocus(this.project);
+
+        this.$el.html(_.template($('#project-detail-template').html(), {
+          'content': slideshow.render() + focus.render()
+        }));
+
+        Slideshow.init(document.getElementById('slider'), $('#project-detail .slideshow-position-list li a'));
+      }
+    });
+
+    views.ProjectFocus = Backbone.View.extend({
+      initialize: function(project){
+          this.project = project;
+      },
+      render: function(){
+        return _.template($('#project-focus-template').html(), {'project': this.project});
+      }
+    });
+
+    views.Slideshow = Backbone.View.extend({
+      initialize: function(images){
+        this.images = images;
+      },
+      render: function(){
+        return _.template($('#slideshow-template').html(), {'images': this.images});
+      }
+    });
+
+    views.InspirationsContainer = Backbone.View.extend({
+      initialize: function(inspirations, categories){
+        this.inspirations = inspirations;
+        this.categories = categories;
+      },
+      render: function(){
+        return _.template($('#inspirations-container-template').html(), {
+          'inspirations': this.inspirations,
+          'length': this.categories.length
+        });
+      }
+    });
+
+    views.ImagesContainer = Backbone.View.extend({
+      initialize: function(images){
+        this.images = images;
+      },
+      render: function(){
+        return _.template($('#images-container-template').html(), {
+          'images': this.images
+        });
+      }
+    });
+
+    views.Inspirations = Backbone.View.extend({
+      el: $('#main'),
+      initialize: function(inspirations, images, categories){
+          this.images = images;
+          this.inspirations = inspirations;
+          this.categories = categories;
+      },
+      render: function(){
+        var inspirations = new views.InspirationsContainer(this.inspirations, this.categories),
+            images = new views.ImagesContainer(this.images);
+
+        this.$el.html(_.template($('#inspirations-template').html(), {
+          'content': inspirations.render() + images.render()
+        }));
+      }
+    });
+
+    views.HomeMessages = Backbone.View.extend({
+      initialize: function(messages, current){
+        this.messages = messages;
+        this.current = current;
+      },
+      render: function(){
+        return _.template($('#homepage-template').html(), {
+          'messages': this.messages,
+          'current': this.current
+        });
+      }
+    });
+
+    views.Slider = Backbone.View.extend({
+      el: $("#footer"),
+      initialize: function(projects, title){
+          this.projects = projects;
+          this.title = title;
+      },
+      render: function(){
+        var template = _.template($('#projects-slider-template').html(), {
+          projects: this.projects,
+          title: this.title
+        });
+
+        this.$el.html(template);
+
+        var length = this.projects.length;
+
+        var container = $('#projects-container ul');
+
+        container
+          .width(length * 140)
+          .flickable({segments: Math.ceil(length / 7)});
+
+        $('#arrow-right span').on('click', function() {
+          container.flickable('scrollNext');
+        });
+
+        $('#arrow-left span').on('click', function() {
+          container.flickable('scrollPrev');
+        });
+      }
+    });
+
     var Portfolio = Backbone.Router.extend({
       routes: {
-        'category/:category': 'category_detail',
-        'category/:category/:project': 'project_detail',
+        'category/:category': 'categoryDetail',
+        'category/:category/:project': 'projectDetail',
         '': 'home',
         '#': 'home',
         'about-me': 'about',
@@ -193,146 +355,94 @@ $(document).ready(function() {
       },
 
       inspirations: function() {
-        get_data(function(data) {
-
+        getData(function(data) {
           $('#home').hide();
 
-          var inspirations = {};
+          var links = new collections.Links(data.links);
 
-          var length = 0;
-
-          _.each(data.links, function(link) {
-            if (!(link.category in inspirations)) {
-              inspirations[link.category] = [];
-              length++;
-            }
-
-            inspirations[link.category].push(link);
+          var inspirations = links.groupBy(function(link){
+            return link.get('category');
           });
 
-          var template = _.template($('#inspirations-template').html(), {
-            'inspirations': inspirations,
-            'length': length,
-            'images': data.images
-          });
+          var categories = _.uniq(links.pluck('category'));
 
-          $('#main').html(template);
+          var view = new views.Inspirations(inspirations, data.images, categories);
+          view.render();
 
           $('#footer').html('');
         });
       },
 
-      project_detail: function(category, project) {
+      projectDetail: function(category_slug, project_slug) {
         var _that = this;
 
-        get_data(function(data) {
-          var obj,
-              projects = [];
-          $.each(data.projects, function(i, item) {
-            if (item.category == category) {
-              projects.push(item);
+        getData(function(data) {
+          var projects = new collections.Projects(data.projects),
+              categories = new collections.Categories(data.categories);
 
-              if (item.slug == project) {
-                obj = item;
-              }
-            }
+          var category = categories.find(function(current){
+            return current.get('slug') == category_slug;
           });
 
-          if (obj) {
-            _that._category_detail($('#' + category), projects);
-            _that._project_detail(obj);
-          }
+          var project = projects.find(function(current){
+            return current.get('slug') == project_slug && current.get('category') == category_slug;
+          });
+
+          var selection = new collections.Projects(projects.where({category: category_slug}));
+
+          _that._categoryDetail(category, selection);
+          _that._projectDetail(project);
         });
       },
 
-      _project_detail: function(project) {
-          var slideshow = _.template($('#slideshow-template').html(), {'images': project.images}),
-              focus = _.template($('#project-focus-template').html(), {'project': project});
-
-          $('#main').html('<div id="project-detail">' + slideshow + focus + '<div class="clear"></div></div>');
-
-          Slideshow.init(document.getElementById('slider'), $('#project-detail .slideshow-position-list li a'));
+      _projectDetail: function(project) {
+          var view = new views.ProjectDetail(project);
+          view.render();
       },
 
-      _category_detail: function(element, projects) {
-          var title = element.find('span.label').html();
-
-          var template = _.template($('#projects-slider-template').html(), {projects: projects, title: title});
-
-          $('#footer').html(template);
-
-          var scrollable = $('#projects-container ul');
-
-          scrollable.width(scrollable.find('li').length * 140);
-
-          scrollable.flickable({segments: Math.ceil(scrollable.find('li').length / 7)});
-
-          $('#arrow-right span').on('click', function() {
-            $('#projects-container ul').flickable('scrollNext');
-          });
-
-          $('#arrow-left span').on('click', function() {
-            $('#projects-container ul').flickable('scrollPrev');
-          });
+      _categoryDetail: function(category, projects) {
+          var view = new views.Slider(projects, category.get('title'));
+          view.render();
 
           _.each(['cloud', 'arrow-left', 'arrow-right'], iconize);
       },
 
-      category_detail: function(category) {
-        var focus = $('#' + category),
-            _that = this;
+      categoryDetail: function(slug) {
+        var _that = this;
 
-        if (focus) {
-          get_data(function(data) {
-            var projects = [];
+        getData(function(data) {
 
-            $.each(data.projects, function(i, item) {
-              if (item.category == category) {
-                projects.push(item);
-              }
-            });
+          var projects = new collections.Projects(data.projects),
+              categories = new collections.Categories(data.categories);
 
-            _that._category_detail(focus, projects);
-            _that._project_detail(projects[0]);
+          var category = categories.find(function(current){
+            return current.get('slug') == slug;
           });
-        }
+
+          var selection = new collections.Projects(projects.where({category: slug}));
+
+          _that._categoryDetail(category, selection);
+          _that._projectDetail(selection.first());
+        });
       },
 
       home: function() {
-          get_data(function(data) {
-            var messages = '<div class="message span-10"> \
-                    <ul> \
-                        <li class="current">Do you want to pee?</li> \
-                        <li>Beer pizza tonight?</li> \
-                        <li>Are you fine?</li> \
-                        <li>It\'s cool isn\'t it?</li> \
-                        <li>Tea of coffee?</li> \
-                    </ul> \
-                </div>';
+          getData(function(data) {
 
-            var slideshow = _.template($('#slideshow-template').html(), {'images': data.homepages});
+            var messages = new views.HomeMessages(data.homepage.messages, 0);
 
-            $('#main').html('<div id="home">' + messages + slideshow + '<div class="clear"></div></div>');
+            var slideshow = new views.Slideshow(data.homepage.images);
+
+            var container = new Backbone.View();
+
+            var el = container.make("div", {"id": "home"}, messages.render() + slideshow.render());
+
+            $('#main').html(el);
 
             Slideshow.init(document.getElementById('slider'), $('#home .slideshow-position-list li a'));
 
-            var template = _.template($('#projects-slider-template').html(), {projects: data.projects, title: "projects"});
-
-            $('#footer').html(template);
-
-            var scrollable = $('#projects-container ul');
-
-            scrollable.width(scrollable.find('li').length * 140);
-
-            scrollable.flickable({segments: Math.ceil(scrollable.find('li').length / 7)});
-
-            $('#arrow-right span').on('click', function() {
-              $('#projects-container ul').flickable('scrollNext');
-            });
-
-            $('#arrow-left span').on('click', function() {
-              $('#projects-container ul').flickable('scrollPrev');
-            });
+            var slider = new views.Slider(new collections.Projects(data.projects), "projects");
+            slider.render();
 
             _.each(['cloud', 'arrow-left', 'arrow-right'], iconize);
           });

@@ -71,60 +71,61 @@ $(document).ready(function() {
           'width': 49,
           'height': 32,
           'color': {
-            'default': '#6034fb',
+            'default': '#6034fb'
           }
         }
       };
 
-      for (var c in n) {
-        d = m[g](c);
-        d && (d = d[p]('span')[0]);
+      function hover() {
+        var _this = $(this);
+        var key = _this.attr('data-identifier');
 
-        var r = Raphael(d, n[c]['width'], n[c]['height']);
-        var group = r.set().attr({'name': 'group'});
+        if (!_this.hasClass('hover')) {
+          n[key].sets.forEach(function(el) {
+            el.attr({
+              fill: n[key].color.hover
+            });
+          });
 
-        n[c]['sets'] = [];
+          _this.addClass('hover').one('mouseout', function() {
+            if (_this.hasClass('hover')) {
+              n[key].sets.forEach(function(el) {
+                el.attr({
+                  fill: n[key].color['default']
+                });
+              });
 
-        for (var path in n[c]['path']) {
-          n[c]['sets'].push(r.path(n[c]['path'][path]).attr({
-            fill: n[c]['color']['default'],
+              _this.removeClass('hover');
+
+              _this.one('mouseover', hover);
+            }
+          });
+        }
+      }
+
+      function iconize(identifier) {
+        var d = m[g](identifier),
+            d = d[p]('span')[0];
+
+        var r = Raphael(d, n[identifier].width, n[identifier].height),
+            group = r.set().attr({'name': 'group'});
+
+        n[identifier].sets = [];
+
+        _.each(n[identifier].path, function(path) {
+          n[identifier].sets.push(r.path(path).attr({
+            fill: n[identifier].color['default'],
             stroke: 'none',
             parent: 'group'
           }));
-        }
 
-        function hover() {
-          var _this = $(this);
-          var key = _this.attr('data-identifier');
-          if (!_this.hasClass('hover')) {
-            n[key]['sets'].forEach(function(el) {
-              el.attr({
-                fill: n[key]['color']['hover']
-              });
-            });
-
-            _this.addClass('hover');
-
-            _this.one('mouseout', function() {
-              if (_this.hasClass('hover')) {
-                n[key]['sets'].forEach(function(el) {
-                  el.attr({
-                    fill: n[key]['color']['default']
-                  });
-                });
-
-                _this.removeClass('hover');
-
-                _this.one('mouseover', hover);
-              }
-            });
+          if ('hover' in n[identifier].color) {
+            $(d).one('mouseover', hover);
           }
-        }
-
-        if ('hover' in n[c]['color']) {
-          $(d).one('mouseover', hover);
-        }
+        });
       }
+
+      _.each(['on-paper', 'inspirations', 'multimedias', 'photography'], iconize);
 
     var logo = m[g]('logo');
     logo.innerHTML = '';
@@ -168,19 +169,180 @@ $(document).ready(function() {
       }
     };
 
-    Slideshow.init(document.getElementById('slider-two'), $('#project-detail .slideshow-position-list li a'));
 
-    var scrollable = $('#projects-container ul');
+    var data;
+    function get_data(callback) {
+      if (data === undefined) {
+        $.getJSON('/data.json', function(result) {
+          data = result;
+          callback(result);
+        });
+      } else {
+        callback(data);
+      }
+    }
 
-    scrollable.width(scrollable.find('li').length * 140);
+    var Portfolio = Backbone.Router.extend({
+      routes: {
+        'category/:category': 'category_detail',
+        'category/:category/:project': 'project_detail',
+        '': 'home',
+        '#': 'home',
+        'about-me': 'about',
+        'inspirations': 'inspirations'
+      },
 
-    scrollable.flickable({segments: Math.ceil(scrollable.find('li').length / 7)});
+      inspirations: function() {
+        get_data(function(data) {
 
-    $('#arrow-right span').on('click', function() {
-      scrollable.flickable('scrollNext');
+          $('#home').hide();
+
+          var inspirations = {};
+
+          var length = 0;
+
+          _.each(data.links, function(link) {
+            if (!(link.category in inspirations)) {
+              inspirations[link.category] = [];
+              length++;
+            }
+
+            inspirations[link.category].push(link);
+          });
+
+          var template = _.template($('#inspirations-template').html(), {
+            'inspirations': inspirations,
+            'length': length,
+            'images': data.images
+          });
+
+          $('#main').html(template);
+
+          $('#footer').html('');
+        });
+      },
+
+      project_detail: function(category, project) {
+        var _that = this;
+
+        get_data(function(data) {
+          var obj,
+              projects = [];
+          $.each(data.projects, function(i, item) {
+            if (item.category == category) {
+              projects.push(item);
+
+              if (item.slug == project) {
+                obj = item;
+              }
+            }
+          });
+
+          if (obj) {
+            _that._category_detail($('#' + category), projects);
+            _that._project_detail(obj);
+          }
+        });
+      },
+
+      _project_detail: function(project) {
+          var slideshow = _.template($('#slideshow-template').html(), {'images': project.images}),
+              focus = _.template($('#project-focus-template').html(), {'project': project});
+
+          $('#main').html('<div id="project-detail">' + slideshow + focus + '<div class="clear"></div></div>');
+
+          Slideshow.init(document.getElementById('slider'), $('#project-detail .slideshow-position-list li a'));
+      },
+
+      _category_detail: function(element, projects) {
+          var title = element.find('span.label').html();
+
+          var template = _.template($('#projects-slider-template').html(), {projects: projects, title: title});
+
+          $('#footer').html(template);
+
+          var scrollable = $('#projects-container ul');
+
+          scrollable.width(scrollable.find('li').length * 140);
+
+          scrollable.flickable({segments: Math.ceil(scrollable.find('li').length / 7)});
+
+          $('#arrow-right span').on('click', function() {
+            $('#projects-container ul').flickable('scrollNext');
+          });
+
+          $('#arrow-left span').on('click', function() {
+            $('#projects-container ul').flickable('scrollPrev');
+          });
+
+          _.each(['cloud', 'arrow-left', 'arrow-right'], iconize);
+      },
+
+      category_detail: function(category) {
+        var focus = $('#' + category),
+            _that = this;
+
+        if (focus) {
+          get_data(function(data) {
+            var projects = [];
+
+            $.each(data.projects, function(i, item) {
+              if (item.category == category) {
+                projects.push(item);
+              }
+            });
+
+            _that._category_detail(focus, projects);
+            _that._project_detail(projects[0]);
+          });
+        }
+      },
+
+      home: function() {
+          get_data(function(data) {
+            var messages = '<div class="message span-10"> \
+                    <ul> \
+                        <li class="current">Do you want to pee?</li> \
+                        <li>Beer pizza tonight?</li> \
+                        <li>Are you fine?</li> \
+                        <li>It\'s cool isn\'t it?</li> \
+                        <li>Tea of coffee?</li> \
+                    </ul> \
+                </div>';
+
+            var slideshow = _.template($('#slideshow-template').html(), {'images': data.homepages});
+
+            $('#main').html('<div id="home">' + messages + slideshow + '<div class="clear"></div></div>');
+
+            Slideshow.init(document.getElementById('slider'), $('#home .slideshow-position-list li a'));
+
+            var template = _.template($('#projects-slider-template').html(), {projects: data.projects, title: "projects"});
+
+            $('#footer').html(template);
+
+            var scrollable = $('#projects-container ul');
+
+            scrollable.width(scrollable.find('li').length * 140);
+
+            scrollable.flickable({segments: Math.ceil(scrollable.find('li').length / 7)});
+
+            $('#arrow-right span').on('click', function() {
+              $('#projects-container ul').flickable('scrollNext');
+            });
+
+            $('#arrow-left span').on('click', function() {
+              $('#projects-container ul').flickable('scrollPrev');
+            });
+
+            _.each(['cloud', 'arrow-left', 'arrow-right'], iconize);
+          });
+      },
+
+      about: function() {
+        this.home();
+      }
     });
 
-    $('#arrow-left span').on('click', function() {
-      scrollable.flickable('scrollPrev');
-    });
+    var portfolio = new Portfolio();
+    Backbone.history.start();
 });

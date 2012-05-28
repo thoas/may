@@ -24,7 +24,7 @@
     > header {
         height: 100px;
         @include box-shadow(1px 1px 12px #dcd9d9);
-        margin-bottom: 50px;
+        margin-bottom: 70px;
     }
 }
 
@@ -182,7 +182,9 @@
 
 #projects {
     h3 {
+        border-bottom: 1px solid #6034FB;
         margin: 0;
+        margin-bottom: 20px;
     }
     #cloud {
         .medium {
@@ -335,6 +337,12 @@
                 a {
                     color: #616161;
                     text-decoration: none;
+                    font-size: 13px;
+                    font-family: 'ITCLubalinGraphStdBook';
+
+                    &:hover {
+                        color: #6034FB;
+                    }
                 }
             }
         }
@@ -459,9 +467,19 @@
     }
 }
 
+#project-detail {
+    height: 350px;
+    margin-bottom: 30px;
+}
+
 .project-focus {
     color: #616161;
-    padding-top: 50px;
+
+    .project-focus-header {
+        border-top: 1px solid #e9e9e9;
+        border-bottom: 1px solid #e9e9e9;
+        padding: 15px 0;
+    }
 
     h2 {
         font-family: 'ITCLubalinGraphStdDemi';
@@ -474,6 +492,10 @@
         padding-left: 50px;
         font-family: 'ITCLubalinGraphStdBook';
         font-size: 13px;
+    }
+
+    td.label {
+        width: 60px;
     }
 
     p {

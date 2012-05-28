@@ -1,4 +1,10 @@
 {
+    "homepages": [
+        "img/home/slideshow/breakin.jpg",
+        "img/home/slideshow/portfolio.jpg",
+        "img/home/slideshow/ulule.jpg",
+        "img/home/slideshow/dropit.jpg"
+    ],
     "projects": [
         {
             "title": "Break'in",
@@ -6,16 +12,17 @@
             "type": "Site communautaire",
             "client": "Projet de fin d'étude à l'IUT MLV, réalisé en équipe",
             "images": [
-                "multimedias/breakin/breakin-01.jpg",
-                "multimedias/breakin/breakin-02.jpg",
-                "multimedias/breakin/breakin-03.jpg",
-                "multimedias/breakin/breakin-04.jpg",
-                "multimedias/breakin/breakin-05.jpg",
-                "multimedias/breakin/breakin-06.jpg",
-                "multimedias/breakin/breakin-07.jpg",
-                "multimedias/breakin/breakin-08.jpg"
+                "img/multimedias/breakin/breakin-01.jpg",
+                "img/multimedias/breakin/breakin-02.jpg",
+                "img/multimedias/breakin/breakin-03.jpg",
+                "img/multimedias/breakin/breakin-04.jpg",
+                "img/multimedias/breakin/breakin-05.jpg",
+                "img/multimedias/breakin/breakin-06.jpg",
+                "img/multimedias/breakin/breakin-07.jpg",
+                "img/multimedias/breakin/breakin-08.jpg"
             ],
-            "thumbnail": "multimedias/breakin/thumbnail.jpg",
+            "thumbnail": "img/multimedias/breakin/thumbnail.jpg",
+            "slug": "breakin",
             "category": "multimedias"
         },
         {
@@ -24,13 +31,14 @@
             "type": "Edition numérique",
             "client": "Projet de fin d'étude de BTS à Estienne",
             "images": [
-                "multimedias/folio/folio-1.jpg",
-                "multimedias/folio/folio-2.jpg",
-                "multimedias/folio/folio-3.jpg",
-                "multimedias/folio/folio-4.jpg",
-                "multimedias/folio/folio-5.jpg"
+                "img/multimedias/folio/folio-1.jpg",
+                "img/multimedias/folio/folio-2.jpg",
+                "img/multimedias/folio/folio-3.jpg",
+                "img/multimedias/folio/folio-4.jpg",
+                "img/multimedias/folio/folio-5.jpg"
             ],
-            "thumbnail": "multimedias/folio/thumbnail.jpg",
+            "thumbnail": "img/multimedias/folio/thumbnail.jpg",
+            "slug": "folio",
             "category": "multimedias"
         },
         {
@@ -39,9 +47,10 @@
             "type": "Concept d'application d'iPhone",
             "client": "Projet de fin d'étude à l'IUT MLV, réalisé en équipe",
             "images": [
-                "multimedias/dropit/dropit-1.jpg"
+                "img/multimedias/dropit/dropit-1.jpg"
             ],
-            "thumbnail": "multimedias/dropit/thumbnail.jpg",
+            "thumbnail": "img/multimedias/dropit/thumbnail.jpg",
+            "slug": "dropit",
             "category": "multimedias"
         },
         {
@@ -50,9 +59,10 @@
             "type": "Application iPhone en cours de réalisation",
             "client": "Projet personnel",
             "images": [
-                "multimedias/ulule/ulule-1.jpg"
+                "img/multimedias/ulule/ulule-1.jpg"
             ],
-            "thumbnail": "multimedias/ulule/thumbnail.jpg",
+            "thumbnail": "img/multimedias/ulule/thumbnail.jpg",
+            "slug": "ulule",
             "category": "multimedias"
         },
         {
@@ -61,9 +71,10 @@
             "type": "Site expérimental sur Flash",
             "client": "Projet personnel",
             "images": [
-                "multimedias/labomatic/labomatic-1"
+                "img/multimedias/labomatic/labomatic-1"
             ],
-            "thumbnail": "multimedias/labomatic/thumbnail.jpg",
+            "thumbnail": "img/multimedias/labomatic/thumbnail.jpg",
+            "slug": "labomatic",
             "category": "multimedias"
         },
         {
@@ -73,7 +84,8 @@
             "client": "Projet pour le Festival EXIT 2011 à l'EPSAA",
             "images": [],
             "video": "http://vimeo.com/21770849",
-            "thumbnail": "multimedias/paranoia/thumbnail.jpg",
+            "thumbnail": "img/multimedias/paranoia/thumbnail.jpg",
+            "slug": "paranoia",
             "category": "multimedias"
         },
         {
@@ -82,11 +94,12 @@
             "client": "Projet de BTS à Estienne",
             "description": "Narcisse est un magazine psychologique : je m’aime comme je suis. C’est un magazine qui ne se lisse pas et qui s’assume. Le parti pris est l’exteriorisation des émotions afin de mieux s’accepter et comprendre sans changer.",
             "images": [
-                "on-paper/narcisse/narcisse-1.jpg",
-                "on-paper/narcisse/narcisse-2.jpg",
-                "on-paper/narcisse/narcisse-3.jpg"
+                "img/on-paper/narcisse/narcisse-1.jpg",
+                "img/on-paper/narcisse/narcisse-2.jpg",
+                "img/on-paper/narcisse/narcisse-3.jpg"
             ],
-            "thumbnail": "on-paper/narcisse/thumbnail.jpg",
+            "thumbnail": "img/on-paper/narcisse/thumbnail.jpg",
+            "slug": "narcisse",
             "category": "on-paper"
         },
         {
@@ -95,10 +108,11 @@
             "client": "Projet de BTS à Estienne",
             "description": "Le dictionnaire Robert lance des livrets de chevet autour de l’histoire de la langue française. On retrouve les inusités, les mots féminisés, les mots djeunes, les mots refusés, les mots royals : rois et reines... Réflexion autour des niveaux de compréhension d’un mot.",
             "images": [
-                "on-paper/robert/robert-1.jpg",
-                "on-paper/robert/robert-2.jpg"
+                "img/on-paper/robert/robert-1.jpg",
+                "img/on-paper/robert/robert-2.jpg"
             ],
-            "thumbnail": "on-paper/robert/thumbnail.jpg",
+            "thumbnail": "img/on-paper/robert/thumbnail.jpg",
+            "slug": "robert",
             "category": "on-paper"
         },
         {
@@ -107,12 +121,13 @@
             "client": "Projet de BTS à Estienne",
             "description": "Visant une cible de jeune amateurs de Vin, ce packaging pour le vin Chateau Haut Rian se concentre sur la pédagogie. Le vin est social et ces étiquettes parlent et vous apprennent le vocabulaire, les citations, l’histoire, les chiffres clé à travers un questionnaire.",
             "images": [
-                "on-paper/vin/vin-1.jpg",
-                "on-paper/vin/vin-2.jpg",
-                "on-paper/vin/vin-3.jpg",
-                "on-paper/vin/vin-4.jpg"
+                "img/on-paper/vin/vin-1.jpg",
+                "img/on-paper/vin/vin-2.jpg",
+                "img/on-paper/vin/vin-3.jpg",
+                "img/on-paper/vin/vin-4.jpg"
             ],
-            "thumbnail": "on-paper/vin/thumbnail.jpg",
+            "thumbnail": "img/on-paper/vin/thumbnail.jpg",
+            "slug": "vin-didactique",
             "category": "on-paper"
         },
         {
@@ -121,12 +136,13 @@
             "client": "Workshop durant le Festival d'Affiche et de Graphisme à Chaumont 2011",
             "description": "Réalisée uniquement avec une photocopieuse, du papier noir et blanc, colle et ciseaux. Ces typos ont été conçues à partir des modules choisis puis rassemblés. Cette méthode de travail permet de mieux comprendre les problématiques de création typographique mais aussi importance des détails d’une lettre. Le résultat est un cadavre esquis de mots de chaque élève.",
             "images": [
-                "on-paper/typo/typo-1.jpg",
-                "on-paper/typo/typo-2.jpg",
-                "on-paper/typo/typo-3.jpg",
-                "on-paper/typo/typo-4.jpg"
+                "img/on-paper/typo/typo-1.jpg",
+                "img/on-paper/typo/typo-2.jpg",
+                "img/on-paper/typo/typo-3.jpg",
+                "img/on-paper/typo/typo-4.jpg"
             ],
-            "thumbnail": "on-paper/typo/thumbnail.jpg",
+            "thumbnail": "img/on-paper/typo/thumbnail.jpg",
+            "slug": "creation-typographique",
             "category": "on-paper"
         },
         {
@@ -135,9 +151,10 @@
             "client": "Projet en BTS à Estienne",
             "description": "Projet autour de la chiromancie (lecture les lignes de la  main) qui permet d’observer les marques de la vie pour extraire une signification comme un voyage dans le temps (passé ou futur). Ici, cette notion est exploitée en tirant des clichés. Ceux-ci sont composés d’un recto qui correspond à une carte postale touristique et d’un verso qui représente une lettre, comme si le texte raconté était lu dans les rides de la main.",
             "images": [
-                "on-paper/memoire/memoire-1.jpg"
+                "img/on-paper/memoire/memoire-1.jpg"
             ],
-            "thumbnail": "on-paper/memoire/thumbnail.jpg",
+            "thumbnail": "img/on-paper/memoire/thumbnail.jpg",
+            "slug": "memoire",
             "category": "on-paper"
         },
         {
@@ -146,10 +163,11 @@
             "client": "Projet en BTS à Estienne",
             "description": "Concours d’identité visuelle pour la maison du HipHop à Barbès. Concept orienté vers la notion de la trace, que ça soit physique (mur, sol) ou mental (société, publique ...).",
             "images": [
-                "on-paper/hiphop/hip-hop-1.jpg",
-                "on-paper/hiphop/hip-hop-2.jpg"
+                "img/on-paper/hiphop/hip-hop-1.jpg",
+                "img/on-paper/hiphop/hip-hop-2.jpg"
             ],
-            "thumbnail": "on-paper/hiphop/thumbnail.jpg",
+            "thumbnail": "img/on-paper/hiphop/thumbnail.jpg",
+            "slug": "la-maison-du-hip-hop-a-paris",
             "category": "on-paper"
         },
         {
@@ -157,18 +175,19 @@
             "type": "Croquis personnels",
             "description": "Dans un train, au déjeuner, à la maison ou dans des lieux ...  Partout où je peux, il m’est important d’évoquer des ambiances par des compositions graphiques.Entre feutre Muji, aquarelle, crayons de couleur et pinceau d’encre de chine, on retrouve une gestuelle qui se fige sur ces carnets de poche.",
             "images": [
-                "on-paper/croquis/croquis-1.jpg",
-                "on-paper/croquis/croquis-2.jpg",
-                "on-paper/croquis/croquis-3.jpg",
-                "on-paper/croquis/croquis-4.jpg",
-                "on-paper/croquis/croquis-5.jpg",
-                "on-paper/croquis/croquis-6.jpg",
-                "on-paper/croquis/croquis-7.jpg",
-                "on-paper/croquis/croquis-8.jpg",
-                "on-paper/croquis/croquis-9.jpg",
-                "on-paper/croquis/croquis-10.jpg"
+                "img/on-paper/croquis/croquis-1.jpg",
+                "img/on-paper/croquis/croquis-2.jpg",
+                "img/on-paper/croquis/croquis-3.jpg",
+                "img/on-paper/croquis/croquis-4.jpg",
+                "img/on-paper/croquis/croquis-5.jpg",
+                "img/on-paper/croquis/croquis-6.jpg",
+                "img/on-paper/croquis/croquis-7.jpg",
+                "img/on-paper/croquis/croquis-8.jpg",
+                "img/on-paper/croquis/croquis-9.jpg",
+                "img/on-paper/croquis/croquis-10.jpg"
             ],
-            "thumbnail": "on-paper/croquis/thumbnail.jpg",
+            "thumbnail": "img/on-paper/croquis/thumbnail.jpg",
+            "slug": "plaisir",
             "category": "on-paper"
         },
         {
@@ -176,20 +195,21 @@
             "type": "Projet personnel",
             "description": "Mettre une attention particulière sur des richesses visuelles trop jugées insignifiantes. Papilloner dans une ville inconnue ces clichés se portent principalement sur les matières, les couleurs et l’architecture du paysage, ce qui apporte une vision atypique des instants vécus.",
             "images": [
-                "photography/erreur/erreur-1.jpg",
-                "photography/erreur/erreur-2.jpg",
-                "photography/erreur/erreur-3.jpg",
-                "photography/erreur/erreur-4.jpg",
-                "photography/erreur/erreur-5.jpg",
-                "photography/erreur/erreur-6.jpg",
-                "photography/erreur/erreur-7.jpg",
-                "photography/erreur/erreur-8.jpg",
-                "photography/erreur/erreur-9.jpg",
-                "photography/erreur/erreur-10.jpg",
-                "photography/erreur/erreur-11.jpg",
-                "photography/erreur/erreur-12.jpg"
+                "img/photography/erreur/erreur-1.jpg",
+                "img/photography/erreur/erreur-2.jpg",
+                "img/photography/erreur/erreur-3.jpg",
+                "img/photography/erreur/erreur-4.jpg",
+                "img/photography/erreur/erreur-5.jpg",
+                "img/photography/erreur/erreur-6.jpg",
+                "img/photography/erreur/erreur-7.jpg",
+                "img/photography/erreur/erreur-8.jpg",
+                "img/photography/erreur/erreur-9.jpg",
+                "img/photography/erreur/erreur-10.jpg",
+                "img/photography/erreur/erreur-11.jpg",
+                "img/photography/erreur/erreur-12.jpg"
             ],
-            "thumbnail": "photography/erreur/thumbnail.jpg",
+            "thumbnail": "img/photography/erreur/thumbnail.jpg",
+            "slug": "erreur-d-attention",
             "category": "photography"
         },
         {
@@ -197,184 +217,341 @@
             "type": "Projet personnel",
             "description": "Travail autour des laps du temps qui s’écoule entre l’ambiance colorée générale et l’interet porté  pour chaque cliché.On peut aussi parlé du temps qui s’écroule entre le pellicule argentique et les clichés couleurs développés... L’attente dans l’utilisation les films argentiques accentue la surprise lorsdu résultat.",
             "images": [
-                "photography/latence/photo-1.jpg",
-                "photography/latence/photo-2.jpg",
-                "photography/latence/photo-3.jpg",
-                "photography/latence/photo-4.jpg",
-                "photography/latence/photo-5.jpg",
-                "photography/latence/photo-6.jpg",
-                "photography/latence/photo-7.jpg",
-                "photography/latence/photo-8.jpg",
-                "photography/latence/photo-9.jpg",
-                "photography/latence/photo-10.jpg",
-                "photography/latence/photo-11.jpg",
-                "photography/latence/photo-12.jpg"
+                "img/photography/latence/photo-1.jpg",
+                "img/photography/latence/photo-2.jpg",
+                "img/photography/latence/photo-3.jpg",
+                "img/photography/latence/photo-4.jpg",
+                "img/photography/latence/photo-5.jpg",
+                "img/photography/latence/photo-6.jpg",
+                "img/photography/latence/photo-7.jpg",
+                "img/photography/latence/photo-8.jpg",
+                "img/photography/latence/photo-9.jpg",
+                "img/photography/latence/photo-10.jpg",
+                "img/photography/latence/photo-11.jpg",
+                "img/photography/latence/photo-12.jpg"
             ],
-            "thumbnail": "photography/latence/thumbnail.jpg",
+            "thumbnail": "img/photography/latence/thumbnail.jpg",
+            "slug": "latence",
             "category": "photography"
         },
         {
             "title": "Rêve d'enfant",
             "type": "Projet personnel",
             "images": [
-                "photography/revedenfant/photo-bdx-1.jpg",
-                "photography/revedenfant/photo-bdx-2.jpg",
-                "photography/revedenfant/photo-bdx-3.jpg"
+                "img/photography/revedenfant/photo-bdx-1.jpg",
+                "img/photography/revedenfant/photo-bdx-2.jpg",
+                "img/photography/revedenfant/photo-bdx-3.jpg"
             ],
-            "thumbnail": "photography/revedenfant/thumbnail.jpg",
+            "thumbnail": "img/photography/revedenfant/thumbnail.jpg",
+            "slug": "reve-d-enfant",
             "category": "photography"
         }
     ],
     "links": [
         {
             "title": "Dribble",
-            "url": "http://dribbble.com/"
+            "url": "http://dribbble.com/",
             "category": "UX / UI"
         },
         {
             "title": "Mobile Patterns",
-            "url": "http://mobile-patterns.com/activityfeeds"
+            "url": "http://mobile-patterns.com/activityfeeds",
             "category": "UX / UI"
         },
         {
             "title": "Ergolab",
-            "url": "http://www.ergolab.net/"
+            "url": "http://www.ergolab.net/",
             "category": "UX / UI"
         },
         {
             "title": "Fast co Design",
-            "url": "http://www.fastcodesign.com/"
+            "url": "http://www.fastcodesign.com/",
             "category": "UX / UI"
         },
         {
             "title": "Thinking",
-            "url": "http://design.activeside.net/thinking"
+            "url": "http://design.activeside.net/thinking",
             "category": "UX / UI"
         },
         {
             "title": "Android Patterns",
-            "url": "http://www.androidpatterns.com/"
+            "url": "http://www.androidpatterns.com/",
             "category": "UX / UI"
         },
         {
             "title": "Faute de gout",
-            "url": "http://mauvaisgout.net/"
+            "url": "http://mauvaisgout.net/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Culture d'art numérique",
-            "url": "http://www.mediaartdesign.net/"
+            "url": "http://www.mediaartdesign.net/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Inspire moi",
-            "url": "http://inspire.2ia.pl/"
+            "url": "http://inspire.2ia.pl/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Packaging",
-            "url": "http://lovelypackage.com/"
+            "url": "http://lovelypackage.com/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Editions Volumiques",
-            "url": "http://www.volumique.com/fr/"
+            "url": "http://www.volumique.com/fr/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Arts numérique",
-            "url": "http://arts-numeriques.net/"
+            "url": "http://arts-numeriques.net/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Toilet ?",
-            "url": "http://www.papertoilet.com/"
+            "url": "http://www.papertoilet.com/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Plage Été Nanas",
-            "url": "http://www.yesforsure.com/"
+            "url": "http://www.yesforsure.com/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Inspirations graphisme",
-            "url": "http://designspiration.net/"
+            "url": "http://designspiration.net/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Son & Émotions",
-            "url": "http://www.stereomood.com/"
+            "url": "http://www.stereomood.com/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Artiste numérique",
-            "url": "http://www.recyclism.com/"
+            "url": "http://www.recyclism.com/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Smile everyday",
-            "url": "http://yayeveryday.com/"
+            "url": "http://yayeveryday.com/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Crazy",
-            "url": "http://www.nekromisantrop.com/"
+            "url": "http://www.nekromisantrop.com/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "10$ font",
-            "url": "http://www.tendollarfonts.com/"
+            "url": "http://www.tendollarfonts.com/",
             "category": "TYPOGRAPHY"
         },
         {
             "title": "BAT font",
-            "url": "http://www.batfoundry.com/"
+            "url": "http://www.batfoundry.com/",
             "category": "TYPOGRAPHY"
         },
         {
             "title": "Google font",
-            "url": "http://www.google.com/webfonts"
+            "url": "http://www.google.com/webfonts",
             "category": "TYPOGRAPHY"
         },
         {
             "title": "Veer font",
-            "url": "http://www.veer.com/products/fonts/"
+            "url": "http://www.veer.com/products/fonts/",
             "category": "TYPOGRAPHY"
         },
         {
             "title": "Moebuz concept",
-            "url": "http://meobius.fr/"
+            "url": "http://meobius.fr/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Geoffrey Dorme",
-            "url": "http://graphism.fr/"
+            "url": "http://graphism.fr/",
             "category": "GRAPHIC DESIGN"
         },
         {
             "title": "Camille André",
-            "url": "http://cephalon-art.blogspot.fr/"
+            "url": "http://cephalon-art.blogspot.fr/",
             "category": "BLOGS"
         },
         {
             "title": "Clément De Ruyter",
-            "url": "http://rat-and-cat.blogspot.fr/"
+            "url": "http://rat-and-cat.blogspot.fr/",
             "category": "BLOGS"
         },
         {
             "title": "Romy Ryan James",
-            "url": "http://www.flickr.com/photos/romyryanjames/"
+            "url": "http://www.flickr.com/photos/romyryanjames/",
             "category": "BLOGS"
         },
         {
             "title": "Adrien Boissonnot",
-            "url": "http://www.dwarfa.fr/"
+            "url": "http://www.dwarfa.fr/",
             "category": "BLOGS"
         },
         {
             "title": "Augustin Clermont",
-            "url": "http://augustino.canalblog.com/"
+            "url": "http://augustino.canalblog.com/",
             "category": "BLOGS"
         }
+    ],
+    "images": [
+        "img/inspiration/1.jpg",
+        "img/inspiration/10.jpg",
+        "img/inspiration/100.png",
+        "img/inspiration/101.png",
+        "img/inspiration/102.jpg",
+        "img/inspiration/103.png",
+        "img/inspiration/104.png",
+        "img/inspiration/105.png",
+        "img/inspiration/106.jpg",
+        "img/inspiration/107.jpg",
+        "img/inspiration/108.png",
+        "img/inspiration/109.png",
+        "img/inspiration/11.jpg",
+        "img/inspiration/110.png",
+        "img/inspiration/111.jpeg",
+        "img/inspiration/112.png",
+        "img/inspiration/113.jpg",
+        "img/inspiration/114.jpg",
+        "img/inspiration/115.jpg",
+        "img/inspiration/116.jpg",
+        "img/inspiration/117.jpg",
+        "img/inspiration/118.jpg",
+        "img/inspiration/119.png",
+        "img/inspiration/12.jpeg",
+        "img/inspiration/120.jpg",
+        "img/inspiration/121.jpg",
+        "img/inspiration/122.png",
+        "img/inspiration/123.png",
+        "img/inspiration/124.png",
+        "img/inspiration/125.png",
+        "img/inspiration/126.jpg",
+        "img/inspiration/127.jpg",
+        "img/inspiration/128.png",
+        "img/inspiration/129.png",
+        "img/inspiration/13.png",
+        "img/inspiration/130.png",
+        "img/inspiration/131.png",
+        "img/inspiration/132.png",
+        "img/inspiration/133.jpg",
+        "img/inspiration/134.jpeg",
+        "img/inspiration/135.jpeg",
+        "img/inspiration/136.png",
+        "img/inspiration/137.jpeg",
+        "img/inspiration/138.png",
+        "img/inspiration/139.jpg",
+        "img/inspiration/140.png",
+        "img/inspiration/141.png",
+        "img/inspiration/142.jpeg",
+        "img/inspiration/143.jpg",
+        "img/inspiration/144.jpg",
+        "img/inspiration/145.png",
+        "img/inspiration/146.jpeg",
+        "img/inspiration/147.jpg",
+        "img/inspiration/148.png",
+        "img/inspiration/149.jpg",
+        "img/inspiration/15.jpeg",
+        "img/inspiration/150.png",
+        "img/inspiration/151.png",
+        "img/inspiration/152.jpg",
+        "img/inspiration/153.jpg",
+        "img/inspiration/154.png",
+        "img/inspiration/155.png",
+        "img/inspiration/156.jpg",
+        "img/inspiration/157.png",
+        "img/inspiration/158.png",
+        "img/inspiration/159.png",
+        "img/inspiration/16.jpg",
+        "img/inspiration/160.jpg",
+        "img/inspiration/161.gif",
+        "img/inspiration/162.jpeg",
+        "img/inspiration/163.jpeg",
+        "img/inspiration/164.png",
+        "img/inspiration/165.jpg",
+        "img/inspiration/166.jpg",
+        "img/inspiration/167.jpeg",
+        "img/inspiration/168.jpg",
+        "img/inspiration/169.jpg",
+        "img/inspiration/17.jpg",
+        "img/inspiration/170.png",
+        "img/inspiration/171.png",
+        "img/inspiration/172.jpg",
+        "img/inspiration/173.jpg",
+        "img/inspiration/174.png",
+        "img/inspiration/175.jpeg",
+        "img/inspiration/176.jpeg",
+        "img/inspiration/177.png",
+        "img/inspiration/178.jpeg",
+        "img/inspiration/179.png",
+        "img/inspiration/18.jpg",
+        "img/inspiration/180.png",
+        "img/inspiration/181.png",
+        "img/inspiration/182.jpeg",
+        "img/inspiration/183.jpg",
+        "img/inspiration/184.py",
+        "img/inspiration/19.jpg",
+        "img/inspiration/2.jpg",
+        "img/inspiration/24.png",
+        "img/inspiration/25.gif",
+        "img/inspiration/28.png",
+        "img/inspiration/3.png",
+        "img/inspiration/30.jpeg",
+        "img/inspiration/31.jpeg",
+        "img/inspiration/32.png",
+        "img/inspiration/33.png",
+        "img/inspiration/34.png",
+        "img/inspiration/36.jpeg",
+        "img/inspiration/38.png",
+        "img/inspiration/39.jpeg",
+        "img/inspiration/4.jpeg",
+        "img/inspiration/40.jpg",
+        "img/inspiration/42.jpeg",
+        "img/inspiration/43.png",
+        "img/inspiration/44.png",
+        "img/inspiration/48.jpeg",
+        "img/inspiration/5.png",
+        "img/inspiration/50.png",
+        "img/inspiration/51.png",
+        "img/inspiration/53.py",
+        "img/inspiration/54.jpg",
+        "img/inspiration/55.jpeg",
+        "img/inspiration/58.png",
+        "img/inspiration/59.png",
+        "img/inspiration/6.png",
+        "img/inspiration/60.png",
+        "img/inspiration/62.png",
+        "img/inspiration/63.png",
+        "img/inspiration/65.png",
+        "img/inspiration/66.jpg",
+        "img/inspiration/67.jpg",
+        "img/inspiration/68.png",
+        "img/inspiration/7.jpeg",
+        "img/inspiration/72.png",
+        "img/inspiration/73.jpg",
+        "img/inspiration/74.jpg",
+        "img/inspiration/75.jpg",
+        "img/inspiration/76.jpeg",
+        "img/inspiration/77.jpg",
+        "img/inspiration/78.jpg",
+        "img/inspiration/79.png",
+        "img/inspiration/8.jpeg",
+        "img/inspiration/81.png",
+        "img/inspiration/82.png",
+        "img/inspiration/83.jpg",
+        "img/inspiration/84.png",
+        "img/inspiration/86.jpeg",
+        "img/inspiration/89.png",
+        "img/inspiration/9.jpg",
+        "img/inspiration/91.jpg",
+        "img/inspiration/92.png",
+        "img/inspiration/93.jpeg",
+        "img/inspiration/94.jpg",
+        "img/inspiration/98.jpg",
+        "img/inspiration/99.png"
     ]
 }

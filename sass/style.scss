@@ -254,12 +254,28 @@
                         display: block;
                     }
 
+                    img {
+                        @include opacity(0.3);
+                        -webkit-transition: opacity 200ms linear;
+                        -moz-transition: opacity 200ms linear;
+                        &:hover {
+                            @include opacity(1);
+                        }
+                    }
+
+                    &.active {
+                        img {
+                            @include opacity(1);
+                        }
+                    }
+
                     .arrow-container {
                         height: 0;
                         width: 0;
                         border-width: 0 43px 43px;
                         border-color: transparent transparent #fff transparent;
                         border-style: solid;
+                        z-index: 10;
 
                         &.top-left {
                             @include rotate(-45deg);

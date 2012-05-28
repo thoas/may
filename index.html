@@ -173,7 +173,7 @@
                 <ul>
                     <% projects.each(function(project) { %> 
                     <li>
-                        <div class="project">
+                    <div class="project<% if (current !== undefined && current.get('slug') == project.get('slug')) { %> active<% } %>">
                             <a href="#category/<%= project.get('category') %>/<%= project.get('slug') %>">
                                 <div class="arrow-container top-left"></div>
                                 <div class="arrow-container top-right"></div>

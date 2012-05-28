@@ -88,16 +88,18 @@ $(document).ready(function() {
           });
 
           _this.addClass('hover').one('mouseout', function() {
-            if (_this.hasClass('hover')) {
-              n[key].sets.forEach(function(el) {
-                el.attr({
-                  fill: n[key].color['default']
+            if (!_this.hasClass('active')) {
+              if (_this.hasClass('hover')) {
+                n[key].sets.forEach(function(el) {
+                  el.attr({
+                    fill: n[key].color['default']
+                  });
                 });
-              });
 
-              _this.removeClass('hover');
+                _this.removeClass('hover');
 
-              _this.one('mouseover', hover);
+                _this.one('mouseover', hover);
+              }
             }
           });
         }
@@ -223,7 +225,7 @@ $(document).ready(function() {
     });
 
     views.ProjectDetail = Backbone.View.extend({
-      el: $("#main"),
+      el: $('#main'),
       initialize: function(project){
           this.project = project;
       },
@@ -313,15 +315,17 @@ $(document).ready(function() {
     });
 
     views.Slider = Backbone.View.extend({
-      el: $("#footer"),
-      initialize: function(projects, title){
+      el: $('#footer'),
+      initialize: function(projects, title, current){
           this.projects = projects;
           this.title = title;
+          this.current = current;
       },
       render: function(){
         var template = _.template($('#projects-slider-template').html(), {
           projects: this.projects,
-          title: this.title
+          title: this.title,
+          current: this.current
         });
 
         this.$el.html(template);
@@ -390,7 +394,7 @@ $(document).ready(function() {
 
           var selection = new collections.Projects(projects.where({category: category_slug}));
 
-          _that._categoryDetail(category, selection);
+          _that._categoryDetail(category, selection, project);
           _that._projectDetail(project);
         });
       },
@@ -400,11 +404,26 @@ $(document).ready(function() {
           view.render();
       },
 
-      _categoryDetail: function(category, projects) {
-          var view = new views.Slider(projects, category.get('title'));
+      _categoryDetail: function(category, projects, project) {
+          var view = new views.Slider(projects, category.get('title'), project);
           view.render();
 
           _.each(['cloud', 'arrow-left', 'arrow-right'], iconize);
+
+          var slug = category.get('slug'),
+              color = n[slug].color.hover,
+              d = m[g](slug),
+              d = d[p]('span')[0];
+
+          $(d).addClass('active');
+
+          _.each([slug, 'cloud'], function(key){
+            n[key].sets.forEach(function(el) {
+              el.animate({
+                fill: color
+              }, 500);
+            });
+          });
       },
 
       categoryDetail: function(slug) {
@@ -421,8 +440,9 @@ $(document).ready(function() {
 
           var selection = new collections.Projects(projects.where({category: slug}));
 
-          _that._categoryDetail(category, selection);
+          _that._categoryDetail(category, selection, selection.first());
           _that._projectDetail(selection.first());
+
         });
       },
 
@@ -435,13 +455,13 @@ $(document).ready(function() {
 
             var container = new Backbone.View();
 
-            var el = container.make("div", {"id": "home"}, messages.render() + slideshow.render());
+            var el = container.make('div', {'id': 'home'}, messages.render() + slideshow.render());
 
             $('#main').html(el);
 
             Slideshow.init(document.getElementById('slider'), $('#home .slideshow-position-list li a'));
 
-            var slider = new views.Slider(new collections.Projects(data.projects), "projects");
+            var slider = new views.Slider(new collections.Projects(data.projects), 'projects');
             slider.render();
 
             _.each(['cloud', 'arrow-left', 'arrow-right'], iconize);

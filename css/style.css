@@ -232,12 +232,27 @@
 #projects #projects-container ul li div.project a {
   display: block;
 }
+#projects #projects-container ul li div.project img {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30);
+  opacity: 0.3;
+  -webkit-transition: opacity 200ms linear;
+  -moz-transition: opacity 200ms linear;
+}
+#projects #projects-container ul li div.project img:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+#projects #projects-container ul li div.project.active img {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
 #projects #projects-container ul li div.project .arrow-container {
   height: 0;
   width: 0;
   border-width: 0 43px 43px;
   border-color: transparent transparent #fff transparent;
   border-style: solid;
+  z-index: 10;
 }
 #projects #projects-container ul li div.project .arrow-container.top-left {
   -moz-transform: rotate(-45deg);

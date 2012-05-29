@@ -127,6 +127,40 @@ $(document).ready(function() {
         });
       }
 
+      function rebase(identifier) {
+        var previous = $('#menu-item li a span.active');
+
+        if (previous.length) {
+          previous.removeClass('active');
+
+          var previousIdentifier = previous.attr('data-identifier');
+
+          n[previousIdentifier].sets.forEach(function(el) {
+            el.animate({
+              fill: n[previousIdentifier].color['default']
+            }, 500);
+          });
+        }
+
+        if (identifier !== undefined) {
+          var color = n[identifier].color.hover,
+              d = m[g](identifier),
+              d = d[p]('span')[0];
+
+          $(d).addClass('active');
+
+          _.each([identifier, 'cloud'], function(key) {
+            if (n[key] !== undefined && n[key].sets !== undefined) {
+              n[key].sets.forEach(function(el) {
+                el.animate({
+                  fill: color
+                }, 500);
+              });
+            }
+          });
+        }
+      }
+
       _.each(['on-paper', 'inspirations', 'multimedias', 'photography'], iconize);
 
     var logo = m[g]('logo');
@@ -243,16 +277,16 @@ $(document).ready(function() {
     });
 
     views.ProjectFocus = Backbone.View.extend({
-      initialize: function(project){
+      initialize: function(project) {
           this.project = project;
       },
-      render: function(){
+      render: function() {
         return _.template($('#project-focus-template').html(), {'project': this.project});
       }
     });
 
     views.Slideshow = Backbone.View.extend({
-      initialize: function(images){
+      initialize: function(images) {
         this.images = images;
       },
       render: function(){
@@ -261,7 +295,7 @@ $(document).ready(function() {
     });
 
     views.InspirationsContainer = Backbone.View.extend({
-      initialize: function(inspirations, categories){
+      initialize: function(inspirations, categories) {
         this.inspirations = inspirations;
         this.categories = categories;
       },
@@ -274,7 +308,7 @@ $(document).ready(function() {
     });
 
     views.ImagesContainer = Backbone.View.extend({
-      initialize: function(images){
+      initialize: function(images) {
         this.images = images;
       },
       render: function(){
@@ -286,7 +320,7 @@ $(document).ready(function() {
 
     views.Inspirations = Backbone.View.extend({
       el: $('#main'),
-      initialize: function(inspirations, images, categories){
+      initialize: function(inspirations, images, categories) {
           this.images = images;
           this.inspirations = inspirations;
           this.categories = categories;
@@ -316,7 +350,7 @@ $(document).ready(function() {
 
     views.Slider = Backbone.View.extend({
       el: $('#footer'),
-      initialize: function(projects, title, current){
+      initialize: function(projects, title, current) {
           this.projects = projects;
           this.title = title;
           this.current = current;
@@ -354,17 +388,16 @@ $(document).ready(function() {
         'category/:category/:project': 'projectDetail',
         '': 'home',
         '#': 'home',
+        'home': 'home',
         'about-me': 'about',
         'inspirations': 'inspirations'
       },
 
       inspirations: function() {
         getData(function(data) {
-          $('#home').hide();
-
           var links = new collections.Links(data.links);
 
-          var inspirations = links.groupBy(function(link){
+          var inspirations = links.groupBy(function(link) {
             return link.get('category');
           });
 
@@ -374,6 +407,8 @@ $(document).ready(function() {
           view.render();
 
           $('#footer').html('');
+
+          rebase('inspirations');
         });
       },
 
@@ -384,11 +419,11 @@ $(document).ready(function() {
           var projects = new collections.Projects(data.projects),
               categories = new collections.Categories(data.categories);
 
-          var category = categories.find(function(current){
+          var category = categories.find(function(current) {
             return current.get('slug') == category_slug;
           });
 
-          var project = projects.find(function(current){
+          var project = projects.find(function(current) {
             return current.get('slug') == project_slug && current.get('category') == category_slug;
           });
 
@@ -410,20 +445,7 @@ $(document).ready(function() {
 
           _.each(['cloud', 'arrow-left', 'arrow-right'], iconize);
 
-          var slug = category.get('slug'),
-              color = n[slug].color.hover,
-              d = m[g](slug),
-              d = d[p]('span')[0];
-
-          $(d).addClass('active');
-
-          _.each([slug, 'cloud'], function(key){
-            n[key].sets.forEach(function(el) {
-              el.animate({
-                fill: color
-              }, 500);
-            });
-          });
+          rebase(category.get('slug'));
       },
 
       categoryDetail: function(slug) {
@@ -434,7 +456,7 @@ $(document).ready(function() {
           var projects = new collections.Projects(data.projects),
               categories = new collections.Categories(data.categories);
 
-          var category = categories.find(function(current){
+          var category = categories.find(function(current) {
             return current.get('slug') == slug;
           });
 
@@ -442,7 +464,6 @@ $(document).ready(function() {
 
           _that._categoryDetail(category, selection, selection.first());
           _that._projectDetail(selection.first());
-
         });
       },
 
@@ -465,6 +486,8 @@ $(document).ready(function() {
             slider.render();
 
             _.each(['cloud', 'arrow-left', 'arrow-right'], iconize);
+
+            rebase();
           });
       },
 

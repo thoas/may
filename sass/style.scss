@@ -17,14 +17,28 @@
 
 @include font-face("ITCLubalinGraphStdDemiOblique", font-files("lubalingraphstd-demioblique-webfont.woff", woff, "lubalingraphstd-demioblique-webfont.otf", truetype, "lubalingraphstd-demioblique-webfont.svg", svg), "lubalingraphstd-demioblique-webfont.eot");
 
+html, body{
+    height: 100%
+}
+
 #wrapper {
     margin: 0 auto;
+    min-height: 100%;
+    position: relative;
     @include container;
 
     > header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1000;
         height: 100px;
         @include box-shadow(1px 1px 12px #dcd9d9);
         margin-bottom: 70px;
+        background-color: #fff;
+        width: 950px;
+        margin: 0 auto;
     }
 }
 
@@ -36,7 +50,7 @@
 
 #logo {
     position: absolute;
-    left: 590px;
+    left: 425px;
     top: 30px;
 }
 
@@ -280,8 +294,8 @@
                         &.top-left {
                             @include rotate(-45deg);
                             position: absolute;
-                            top: -7px;
-                            left: -28px;
+                            top: -8px;
+                            left: -29px;
                         }
 
                         &.top-right {
@@ -294,8 +308,8 @@
                         &.bottom-right {
                             @include rotate(135deg);
                             position: absolute;
-                            bottom: -7px;
-                            right: -28px;
+                            bottom: -8px;
+                            right: -29px;
                         }
 
                         &.bottom-left {
@@ -404,15 +418,15 @@
             &.top-left {
                 @include rotate(-45deg);
                 position: absolute;
-                top: -6px;
-                left: -27px;
+                top: -8px;
+                left: -29px;
             }
 
             &.bottom-right {
                 @include rotate(135deg);
                 position: absolute;
-                bottom: -6px;
-                right: -26px;
+                bottom: -8px;
+                right: -29px;
             }
         }
     }
@@ -520,9 +534,15 @@
     }
 }
 
-#footer {
-    margin-top: 20px;
+#main {
+    padding-bottom: 180px;
+    padding-top: 180px;
 }
 
-
-/*@include sticky-footer(54px, "#wrapper", "#main", "#footer")*/
+#footer {
+    height: 180px;
+    clear: both;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+}

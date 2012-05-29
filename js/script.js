@@ -124,44 +124,46 @@ $(document).ready(function() {
           if ('hover' in n[identifier].color) {
             $(d).one('mouseover', hover);
           }
+
         });
       }
 
-      function rebase(identifier) {
-        var previous = $('#menu-item li a span.active');
+    function rebase(identifier) {
+      var previous = $('#menu-item li a span.active');
 
-        if (previous.length) {
-          previous.removeClass('active');
+      if (previous.length) {
+        previous.removeClass('active');
 
-          var previousIdentifier = previous.attr('data-identifier');
+        var previousIdentifier = previous.attr('data-identifier');
 
-          n[previousIdentifier].sets.forEach(function(el) {
-            el.animate({
-              fill: n[previousIdentifier].color['default']
-            }, 500);
-          });
-        }
-
-        if (identifier !== undefined) {
-          var color = n[identifier].color.hover,
-              d = m[g](identifier),
-              d = d[p]('span')[0];
-
-          $(d).addClass('active');
-
-          _.each([identifier, 'cloud'], function(key) {
-            if (n[key] !== undefined && n[key].sets !== undefined) {
-              n[key].sets.forEach(function(el) {
-                el.animate({
-                  fill: color
-                }, 500);
-              });
-            }
-          });
-        }
+        n[previousIdentifier].sets.forEach(function(el) {
+          el.animate({
+            fill: n[previousIdentifier].color['default']
+          }, 500);
+        });
       }
 
-      _.each(['on-paper', 'inspirations', 'multimedias', 'photography'], iconize);
+      if (identifier !== undefined) {
+        var color = n[identifier].color.hover,
+            d = m[g](identifier),
+            d = d[p]('span')[0];
+
+        $(d).addClass('active');
+
+        _.each([identifier, 'cloud'], function(key) {
+          if (n[key] !== undefined && n[key].sets !== undefined) {
+            n[key].sets.forEach(function(el) {
+              el.animate({
+                fill: color
+              }, 500);
+            });
+          }
+        });
+      }
+    }
+
+    _.each(['on-paper', 'inspirations', 'multimedias', 'photography'], iconize);
+
 
     var logo = m[g]('logo');
     logo.innerHTML = '';
@@ -207,15 +209,23 @@ $(document).ready(function() {
 
 
     var data;
+
     function getData(callback) {
-      if (data === undefined) {
-        $.getJSON('/data.json', function(result) {
-          data = result;
-          callback(result);
-        });
-      } else {
-        callback(data);
-      }
+      $('#progress-bar').animate({width: '20%'}, 200, 'ease-in-out', function() {
+        if (data === undefined) {
+          $.getJSON('/data.json', function(result) {
+            data = result;
+
+            $('#progress-bar').animate({width: '100%'}, 800, 'ease-in-out');
+
+            callback(result);
+          });
+        } else {
+          $('#progress-bar').animate({width: '100%'}, 800, 'ease-in-out');
+
+          callback(data);
+        }
+      });
     }
 
     var models = {},

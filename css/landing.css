@@ -1,0 +1,313 @@
+/* line 82, landing/*.png */
+.landing-sprite, .landing-book, .landing-diamond, .landing-facebook, .landing-linkedin, .landing-mail, .landing-pinterest {
+  background: url('/img/landing-s6cdec2ee25.png') no-repeat;
+}
+
+/**/
+/* line 60, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.landing-book {
+  background-position: 0 -16px;
+}
+
+/* line 60, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.landing-diamond {
+  background-position: 0 0;
+}
+
+/* line 60, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.landing-facebook {
+  background-position: 0 -78px;
+}
+
+/* line 60, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.landing-linkedin {
+  background-position: 0 -65px;
+}
+
+/* line 60, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.landing-mail {
+  background-position: 0 -52px;
+}
+
+/* line 60, ../../../../.rvm/gems/ruby-1.9.2-p290/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/sprites/_base.scss */
+.landing-pinterest {
+  background-position: 0 -34px;
+}
+
+@font-face {
+  font-family: 'GillSansMTProLight';
+  src: url("fonts/gillsansmtpro-light.eot");
+  src: url("fonts/gillsansmtpro-light.eot") format("embedded-opentype"), url("fonts/gillsansmtpro-light.woff") format("woff"), url("fonts/gillsansmtpro-light.ttf") format("truetype"), url("fonts/gillsansmtpro-light.svg#GillSansMTProLight") format("svg");
+}
+
+/* line 17, ../sass/landing.scss */
+body {
+  background: white url("../img/bg-normal.jpg") no-repeat;
+}
+
+/* line 21, ../sass/landing.scss */
+#wrapper {
+  padding-top: 150px;
+  width: 980px;
+  margin: 0 auto;
+}
+
+/* line 27, ../sass/landing.scss */
+.clear {
+  clear: both;
+}
+
+/* line 31, ../sass/landing.scss */
+#main {
+  padding-bottom: 50px;
+  min-height: 500px;
+}
+
+/* line 36, ../sass/landing.scss */
+h1 {
+  font-family: 'GillSansMTProLight';
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #09da98;
+}
+
+/* line 43, ../sass/landing.scss */
+.information {
+  list-style-type: none;
+  padding: 0;
+}
+/* line 47, ../sass/landing.scss */
+.information li {
+  font-family: 'GillSansMTProLight';
+  color: #09da98;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* line 55, ../sass/landing.scss */
+.baseline {
+  font-family: 'GillSansMTProLight';
+  color: #d8d8d8;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* line 62, ../sass/landing.scss */
+.landing-diamond {
+  width: 18px;
+  height: 16px;
+  position: relative;
+  top: 4px;
+}
+
+/* line 69, ../sass/landing.scss */
+[class^="landing-"] {
+  display: inline-block;
+}
+
+/* line 73, ../sass/landing.scss */
+aside {
+  float: left;
+  margin-right: 60px;
+}
+
+/* line 78, ../sass/landing.scss */
+.content {
+  position: relative;
+  float: left;
+  width: 335px;
+}
+/* line 83, ../sass/landing.scss */
+.content .losange {
+  width: 330px;
+  height: 330px;
+  border: 1px solid #818181;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -ms-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  position: absolute;
+}
+/* line 91, ../sass/landing.scss */
+.content p {
+  font-family: 'GillSansMTProLight';
+  color: #09da98;
+  font-size: 22px;
+  text-transform: uppercase;
+  position: relative;
+  text-align: center;
+  line-height: 300px;
+}
+/* line 101, ../sass/landing.scss */
+.content .dot {
+  height: 10px;
+  width: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #818181;
+  margin: 0 auto;
+}
+
+/* line 110, ../sass/landing.scss */
+.social {
+  float: left;
+  position: relative;
+  margin-left: 35px;
+  padding-top: 45px;
+  width: 90px;
+}
+
+/* line 118, ../sass/landing.scss */
+.social-items {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  margin-left: -15px;
+  margin-top: 60px;
+  list-style-type: none;
+  padding: 0;
+}
+/* line 126, ../sass/landing.scss */
+.social-items li {
+  width: 150px;
+}
+/* line 128, ../sass/landing.scss */
+.social-items li:not(:last-child) {
+  margin-bottom: 3px;
+}
+/* line 132, ../sass/landing.scss */
+.social-items li .social-container {
+  float: left;
+  margin-right: 3px;
+}
+/* line 136, ../sass/landing.scss */
+.social-items li .social-container.no-margin {
+  margin-right: 0;
+}
+
+/* line 143, ../sass/landing.scss */
+.social-items-container {
+  position: relative;
+}
+
+/* line 147, ../sass/landing.scss */
+.social-icons-container {
+  position: absolute;
+  top: 0;
+  left: -20px;
+  width: 85px;
+  padding: 10px;
+}
+/* line 154, ../sass/landing.scss */
+.social-icons-container .line {
+  margin-bottom: 16px;
+}
+/* line 157, ../sass/landing.scss */
+.social-icons-container .line span.center {
+  margin: 0 auto;
+}
+/* line 161, ../sass/landing.scss */
+.social-icons-container .line span.left {
+  float: left;
+}
+/* line 165, ../sass/landing.scss */
+.social-icons-container .line span.right {
+  float: right;
+}
+
+/* line 176, ../sass/landing.scss */
+.social-container [class^="landing-"] {
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 181, ../sass/landing.scss */
+.social-container .text-container {
+  padding-top: 25px;
+  width: 65px;
+}
+/* line 186, ../sass/landing.scss */
+.social-container a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+}
+/* line 191, ../sass/landing.scss */
+.social-container a:hover {
+  text-decoration: none;
+}
+/* line 195, ../sass/landing.scss */
+.social-container .text {
+  font-family: 'GillSansMTProLight';
+  color: #fff;
+  text-transform: uppercase;
+  display: block;
+  text-align: center;
+  z-index: 10;
+  position: relative;
+  font-size: 12px;
+}
+/* line 207, ../sass/landing.scss */
+.social-container.big .losange {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-color: #09da98;
+  margin-left: -12px;
+  margin-top: 10px;
+}
+/* line 219, ../sass/landing.scss */
+.social-container.small .losange {
+  width: 45px;
+  height: 45px;
+  background-color: #d5d5d5;
+}
+
+/* line 227, ../sass/landing.scss */
+.landing-book {
+  width: 25px;
+  height: 18px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* line 236, ../sass/landing.scss */
+.landing-facebook {
+  width: 7px;
+  height: 15px;
+  display: block;
+}
+
+/* line 242, ../sass/landing.scss */
+.landing-linkedin {
+  width: 14px;
+  height: 13px;
+  display: block;
+}
+
+/* line 248, ../sass/landing.scss */
+.landing-mail {
+  width: 16px;
+  height: 13px;
+  display: block;
+}
+
+/* line 254, ../sass/landing.scss */
+.landing-pinterest {
+  width: 14px;
+  height: 18px;
+  display: block;
+}

@@ -1,0 +1,258 @@
+@import "compass/utilities/sprites/sprite-img";
+@import "compass/utilities/sprites";
+@import "compass/css3";
+@import "landing/*.png"; /**/
+
+@include all-landing-sprites;
+
+@font-face {
+    font-family: 'GillSansMTProLight';
+    src: url('fonts/gillsansmtpro-light.eot');
+    src: url('fonts/gillsansmtpro-light.eot') format('embedded-opentype'),
+         url('fonts/gillsansmtpro-light.woff') format('woff'),
+         url('fonts/gillsansmtpro-light.ttf') format('truetype'),
+         url('fonts/gillsansmtpro-light.svg#GillSansMTProLight') format('svg');
+}
+
+body {
+    background: #fff url('../img/bg-normal.jpg') no-repeat;
+}
+
+#wrapper {
+    padding-top: 150px;
+    width: 980px;
+    margin: 0 auto;
+}
+
+.clear {
+    clear: both;
+}
+
+#main {
+    padding-bottom: 50px;
+    min-height: 500px;
+}
+
+h1 {
+    font-family: 'GillSansMTProLight';
+    text-transform: uppercase;
+    font-size: 20px;
+    color: #09da98;
+}
+
+.information {
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        font-family: 'GillSansMTProLight';
+        color: #09da98;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+}
+
+.baseline {
+    font-family: 'GillSansMTProLight';
+    color: #d8d8d8;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.landing-diamond {
+    width: 18px;
+    height: 16px;
+    position: relative;
+    top: 4px;
+}
+
+[class^="landing-"] {
+    display: inline-block;
+}
+
+aside {
+    float: left;
+    margin-right: 60px;
+}
+
+.content {
+    position: relative;
+    float: left;
+    width: 335px;
+
+    .losange {
+        width: 330px;
+        height: 330px;
+        border: 1px solid #818181;
+        @include rotate(135deg);
+        position: absolute;
+    }
+
+    p {
+        font-family: 'GillSansMTProLight';
+        color: #09da98;
+        font-size: 22px;
+        text-transform: uppercase;
+        position: relative;
+        text-align: center;
+        line-height: 300px;
+    }
+
+    .dot {
+        height: 10px;
+        width: 10px;
+        @include border-radius(5px);
+        background-color: #818181;
+        margin: 0 auto;
+    }
+}
+
+.social {
+    float: left;
+    position: relative;
+    margin-left: 35px;
+    padding-top: 45px;
+    width: 90px;
+}
+
+.social-items {
+    @include rotate(-45deg);
+    margin-left: -15px;
+    margin-top: 60px;
+
+    list-style-type: none;
+    padding: 0;
+
+    li {
+        width: 150px;
+        &:not(:last-child) {
+            margin-bottom: 3px;
+        }
+
+        .social-container {
+            float: left;
+            margin-right: 3px;
+
+            &.no-margin {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+.social-items-container {
+    position: relative;
+}
+
+.social-icons-container {
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 85px;
+    padding: 10px;
+
+    .line {
+        margin-bottom: 16px;
+        span {
+            &.center {
+                margin: 0 auto;
+            }
+
+            &.left {
+                float: left;
+            }
+
+            &.right {
+                float: right;
+            }
+        }
+    }
+}
+
+.social-container > * {
+}
+
+.social-container {
+    [class^="landing-"] {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .text-container {
+        padding-top: 25px;
+        width: 65px;
+    }
+
+    a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        text-decoration: none;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    .text {
+        font-family: 'GillSansMTProLight';
+        color: #fff;
+        text-transform: uppercase;
+        display: block;
+        text-align: center;
+        z-index: 10;
+        position: relative;
+        font-size: 12px;
+    }
+
+    &.big {
+        .losange {
+            @include rotate(-45deg);
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            background-color: #09da98;
+            margin-left: -12px;
+            margin-top: 10px;
+        }
+    }
+
+    &.small {
+        .losange {
+            width: 45px;
+            height: 45px;
+            background-color: #d5d5d5;
+        }
+    }
+}
+
+.landing-book {
+    width: 25px;
+    height: 18px;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.landing-facebook {
+    width: 7px;
+    height: 15px;
+    display: block;
+}
+
+.landing-linkedin {
+    width: 14px;
+    height: 13px;
+    display: block;
+}
+
+.landing-mail {
+    width: 16px;
+    height: 13px;
+    display: block;
+}
+
+.landing-pinterest {
+    width: 14px;
+    height: 18px;
+    display: block;
+}

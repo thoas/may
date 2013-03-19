@@ -89,18 +89,6 @@
             "category": "multimedias"
         },
         {
-            "title": "Labomatic",
-            "description": "Critique des horoscopes grâce à des textes qui prédisent l’avenir. Ceux-ci ne sont en réalité que des mots relavés, reformulés... Environ 150 couleurs et textes sont générés aléatoirement.",
-            "type": "Site expérimental sur Flash",
-            "client": "Projet personnel",
-            "images": [
-                "img/multimedias/labomatic/labomatic-1"
-            ],
-            "thumbnail": "img/multimedias/labomatic/thumbnail.jpg",
-            "slug": "labomatic",
-            "category": "multimedias"
-        },
-        {
             "title": "Paranoia",
             "description": "La méfiance de l’inconnu, l’indifférence forcée et la peur du danger sont inculquées dans ces lieux publics. Cette création dévoile une double vision de la réalité qui refléte une liberté surveillée par la multiplication des caméras et l’automatisation des machines.",
             "type": "Audiovisuelle",

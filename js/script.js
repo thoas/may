@@ -49,7 +49,7 @@ $(document).ready(function() {
           'width': 25,
           'height': 30,
           'color': {
-            'default': '#767575',
+            'default': '#dfdede',
             'hover': '#6034fb'
           }
         },
@@ -60,7 +60,7 @@ $(document).ready(function() {
           'width': 25,
           'height': 30,
           'color': {
-            'default': '#767575',
+            'default': '#dfdede',
             'hover': '#6034fb'
           }
         },
@@ -211,9 +211,9 @@ $(document).ready(function() {
     var data;
 
     function getData(callback) {
-      $('#progress-bar').animate({width: '20%'}, 200, 'ease-in-out', function() {
+      $('#progress-bar').animate({width: '0%'}, 200, 'ease-in-out', function() {
         if (data === undefined) {
-          $.getJSON('/data.json', function(result) {
+          $.getJSON('/data.json?' + new Date().getTime(), function(result) {
             data = result;
 
             $('#progress-bar').animate({width: '100%'}, 800, 'ease-in-out');
@@ -502,7 +502,9 @@ $(document).ready(function() {
       },
 
       about: function() {
-        this.home();
+        $('#main').html(_.template($('#about-template').html()));
+
+        $('#footer').html('');
       }
     });
 
